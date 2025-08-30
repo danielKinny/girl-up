@@ -1,3 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+.notable-font {
+  font-family: 'Notable', sans-serif;
+}
+
+.league-spartan {
+  font-family: 'League Spartan', sans-serif;
+}
+
+.pt-serif-caption-regular {
+  font-family: "PT Serif Caption", var(--font-pt-serif-caption), serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.pt-serif-caption-regular-italic {
+  font-family: "PT Serif Caption", var(--font-pt-serif-caption), serif;
+  font-weight: 400;
+  font-style: italic;
+}
 @import "tailwindcss";
 
 :root {
@@ -5,12 +27,6 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -22,5 +38,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), 'Notable', Arial, Helvetica, sans-serif;
 }

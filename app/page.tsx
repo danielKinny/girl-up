@@ -1,103 +1,128 @@
-import Image from "next/image";
+"use client";
+import React from "react";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import SplitText from "../components/SplitText/SplitText";
+
+type PageProps = {
+  offset: number;
+  gradient?: string;
+  onClick?: () => void;
+};
+
+const Page = ({ offset, gradient, onClick }: PageProps) => (
+  <>
+    <ParallaxLayer offset={offset} speed={0.2} onClick={onClick}>
+      <div
+        className="bg-[#20232f] absolute w-[170%] h-full cursor-pointer"
+        style={{ clipPath: 'polygon(20% 0, 70% 0, 50% 100%, 0% 100%)' }}
+      />
+    </ParallaxLayer>
+
+    <ParallaxLayer offset={offset} speed={0.6} onClick={onClick}>
+      <div
+        className="absolute w-[170%] h-full cursor-pointer"
+        style={{ clipPath: 'polygon(70% 0, 100% 0, 80% 100%, 50% 100%)' }}
+      />
+    </ParallaxLayer>
+
+    <ParallaxLayer
+      className="pointer-events-none justify-start font-kanit leading-none uppercase text-[300px] text-[#545864] flex items-center"
+      offset={offset}
+      speed={0.3}
+    >
+      <span className="inline-block relative">0{offset + 1}</span>
+    </ParallaxLayer>
+  </>
+)
+
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="bg-white min-h-screen">
+      <header className="absolute top-0 left-0 w-full z-50 text-black bg-[#4e3493]/30 backdrop-filter backdrop-blur-md rounded-b-xl">
+        <nav className="px-8 mx-auto flex justify-between items-center py-4">
+          <img src="/banner.png" className="w-12" />
+          <ul className="flex space-x-6 text-white">
+            <li><a href="#" className="hover:text-gray-400">Home</a></li>
+            <li><a href="#" className="hover:text-gray-400">About</a></li>
+            <li><a href="#" className="hover:text-gray-400">Contact Us</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <Parallax pages={4} className="min-h-screen">
+          {/* Background Layer - slowest speed for deep parallax */}
+          <ParallaxLayer
+            offset={0}
+            speed={0.1}
+            style={{
+              backgroundImage: 'url(/bg.jpg)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              zIndex: 0,
+            }}
+          />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          {/* Main Title Layer */}
+          <ParallaxLayer
+            offset={0}
+            speed={0.4}
+            className="flex items-center text-white justify-center"
+            style={{ zIndex: 1 }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+            <div className="flex items-center justify-center flex-col">
+              <SplitText
+                text="GIRLUP"
+                className="text-white md:text-9xl sm:text-8xl notable-font font-extrabold text-center block"
+                delay={50}
+                duration={0.9}
+                ease="power3.out"
+                splitType="chars"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                rootMargin="-100px"
+                textAlign="center"
+              />
+              <SplitText
+                text="EQUALL"
+                className="text-white sm:text-8xl md:text-7xl notable-font font-extrabold text-center"
+                delay={50}
+                duration={0.9}
+                ease="power3.out"
+                splitType="chars"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                rootMargin="-100px"
+                textAlign="center"
+              />
+            </div>
+          </ParallaxLayer>
+
+          {/* Decorative Parallax Layers for extra depth */}
+          <ParallaxLayer offset={0.2} speed={0.7} style={{ zIndex: 2 }}>
+            <div className="absolute left-1/4 top-1/2 w-1/2 h-32 bg-[#4e3493]/30 rounded-full blur-2xl" />
+          </ParallaxLayer>
+          <ParallaxLayer offset={0.5} speed={1.2} style={{ zIndex: 2 }}>
+            <div className="absolute right-1/4 top-1/3 w-1/3 h-24 bg-[#20232f]/20 rounded-full blur-2xl" />
+          </ParallaxLayer>
+
+          {/* Section 1 */}
+          <ParallaxLayer offset={1} speed={0.3} style={{ zIndex: 3 }}>
+            <Page offset={1} gradient="bg-gradient-to-r from-[#4e3493] to-[#20232f]" onClick={() => console.log("Page 1 clicked")} />
+          </ParallaxLayer>
+          {/* Section 2 */}
+          <ParallaxLayer offset={2} speed={0.3} style={{ zIndex: 3 }}>
+            <Page offset={2} gradient="bg-gradient-to-r from-[#20232f] to-[#4e3493]" onClick={() => console.log("Page 2 clicked")} />
+          </ParallaxLayer>
+          {/* Section 3 */}
+          <ParallaxLayer offset={3} speed={0.3} style={{ zIndex: 3 }}>
+            <Page offset={3} gradient="bg-gradient-to-r from-[#4e3493] to-[#20232f]" onClick={() => console.log("Page 3 clicked")} />
+          </ParallaxLayer>
+        </Parallax>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
