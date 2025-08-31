@@ -1,7 +1,8 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import SplitText from "../components/SplitText/SplitText";
+import type { IParallax } from "@react-spring/parallax";
+import SplitText from "../components/SplitText/SplitText"
 
 type PageProps = {
   offset: number;
@@ -37,11 +38,27 @@ const Page = ({ offset, gradient, onClick }: PageProps) => (
 
 
 export default function Home() {
+  const regParallaxRef = useRef<IParallax>(null);
+
+  const goToStep = (step: number) => {
+    if (regParallaxRef.current) {
+      // Debug log
+      console.log('regParallaxRef.current:', regParallaxRef.current);
+      if (typeof regParallaxRef.current.scrollTo === 'function') {
+        regParallaxRef.current.scrollTo(step);
+      } else {
+        console.warn('scrollTo is not a function on regParallaxRef.current');
+      }
+    } else {
+      console.warn('regParallaxRef.current is null');
+    }
+  };
+
   return (
     <div className="bg-white min-h-screen">
       <header className="absolute top-0 left-0 w-full z-50 text-black bg-[#4e3493]/30 backdrop-filter backdrop-blur-md rounded-b-xl">
         <nav className="px-8 mx-auto flex justify-between items-center py-4">
-          <img src="/banner.png" className="w-12" />
+          <img src="/banner.png" className="h-20 object-contain" />
           <ul className="flex space-x-6 text-white">
             <li><a href="#" className="hover:text-gray-400">Home</a></li>
             <li><a href="#" className="hover:text-gray-400">About</a></li>
@@ -51,7 +68,6 @@ export default function Home() {
       </header>
       <main>
         <Parallax pages={4} className="min-h-screen">
-          {/* Background Layer - slowest speed for deep parallax */}
           <ParallaxLayer
             offset={0}
             speed={0.1}
@@ -64,17 +80,16 @@ export default function Home() {
             }}
           />
 
-          {/* Main Title Layer */}
           <ParallaxLayer
             offset={0}
             speed={0.4}
             className="flex items-center text-white justify-center"
             style={{ zIndex: 1 }}
           >
-            <div className="flex items-center justify-center flex-col">
+            <div className="flex items-center justify-center flex-col w-full">
               <SplitText
                 text="GIRLUP"
-                className="text-white md:text-9xl sm:text-8xl notable-font font-extrabold text-center block"
+                className="text-white md:text-9xl sm:text-8xl league-spartan font-extrabold text-center block"
                 delay={50}
                 duration={0.9}
                 ease="power3.out"
@@ -87,7 +102,7 @@ export default function Home() {
               />
               <SplitText
                 text="EQUALL"
-                className="text-white sm:text-8xl md:text-7xl notable-font font-extrabold text-center"
+                className="text-white sm:text-8xl md:text-7xl league-spartan font-extrabold text-center"
                 delay={50}
                 duration={0.9}
                 ease="power3.out"
@@ -101,26 +116,58 @@ export default function Home() {
             </div>
           </ParallaxLayer>
 
-          {/* Decorative Parallax Layers for extra depth */}
-          <ParallaxLayer offset={0.2} speed={0.7} style={{ zIndex: 2 }}>
-            <div className="absolute left-1/4 top-1/2 w-1/2 h-32 bg-[#4e3493]/30 rounded-full blur-2xl" />
-          </ParallaxLayer>
-          <ParallaxLayer offset={0.5} speed={1.2} style={{ zIndex: 2 }}>
-            <div className="absolute right-1/4 top-1/3 w-1/3 h-24 bg-[#20232f]/20 rounded-full blur-2xl" />
+          <ParallaxLayer
+            offset={1}
+            speed={0.5}
+            style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2 }}
+          >
+            <div className="w-full h-screen flex justify-center items-center">
+              <Parallax
+                pages={3}
+                horizontal
+                ref={regParallaxRef}
+                className="w-full h-full"
+                style={{ width: '100vw', height: '100vh', background: 'linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%)' }}
+              >
+                {/* Step 1 */}
+                <ParallaxLayer offset={0} speed={0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100vw', height: '100vh' }}>
+                  <div className="flex flex-col items-center justify-center w-full h-full">
+                    <h2 className="text-4xl font-bold mb-4 text-[#4e3493]">Register for GirlUp Equality Conference</h2>
+                    <p className="text-lg text-gray-700 mb-6">Create your account to secure your spot.</p>
+                    <button className="px-6 py-2 bg-[#4e3493] text-white rounded-lg font-semibold mb-2" onClick={() => regParallaxRef.current?.scrollTo(1)}>Next</button>
+                  </div>
+                </ParallaxLayer>
+                {/* Step 2 */}
+                <ParallaxLayer offset={1} speed={0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100vw', height: '100vh' }}>
+                  <div className="flex flex-col items-center justify-center w-full h-full">
+                    <h2 className="text-4xl font-bold mb-4 text-[#4e3493]">Confirm Your Email</h2>
+                    <p className="text-lg text-gray-700 mb-6">Check your inbox for a confirmation link.</p>
+                    <div className="flex gap-4">
+                      <button className="px-6 py-2 bg-gray-300 text-[#4e3493] rounded-lg font-semibold" onClick={() => regParallaxRef.current?.scrollTo(0)}>Back</button>
+                      <button className="px-6 py-2 bg-[#4e3493] text-white rounded-lg font-semibold" onClick={() => regParallaxRef.current?.scrollTo(2)}>Next</button>
+                    </div>
+                  </div>
+                </ParallaxLayer>
+                {/* Step 3 */}
+                <ParallaxLayer offset={2} speed={0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100vw', height: '100vh' }}>
+                  <div className="flex flex-col items-center justify-center w-full h-full">
+                    <h2 className="text-4xl font-bold mb-4 text-[#4e3493]">Personalize Your Experience</h2>
+                    <p className="text-lg text-gray-700 mb-6">Tell us more about yourself and your interests!</p>
+                    <button className="px-6 py-2 bg-gray-300 text-[#4e3493] rounded-lg font-semibold" onClick={() => regParallaxRef.current?.scrollTo(1)}>Back</button>
+                  </div>
+                </ParallaxLayer>
+              </Parallax>
+            </div>
           </ParallaxLayer>
 
-          {/* Section 1 */}
-          <ParallaxLayer offset={1} speed={0.3} style={{ zIndex: 3 }}>
-            <Page offset={1} gradient="bg-gradient-to-r from-[#4e3493] to-[#20232f]" onClick={() => console.log("Page 1 clicked")} />
+          <ParallaxLayer offset={2}>
+            <ParallaxLayer className="flex items-center justify-center">
+              <div className="text-black notable-font text-2xl max-w-3xl p-7 bg-purple-200 rounded-2xl backdrop-filter backdrop-blur shadow-2xl shadow-[#4e3493]/40 drop-shadow-lg">
+                Our vision at GIRLUP is a world where every girl is empowered, <br/> every voice is heard,<br/>and equality is a reality for all.
+              </div>
+            </ParallaxLayer>
           </ParallaxLayer>
-          {/* Section 2 */}
-          <ParallaxLayer offset={2} speed={0.3} style={{ zIndex: 3 }}>
-            <Page offset={2} gradient="bg-gradient-to-r from-[#20232f] to-[#4e3493]" onClick={() => console.log("Page 2 clicked")} />
-          </ParallaxLayer>
-          {/* Section 3 */}
-          <ParallaxLayer offset={3} speed={0.3} style={{ zIndex: 3 }}>
-            <Page offset={3} gradient="bg-gradient-to-r from-[#4e3493] to-[#20232f]" onClick={() => console.log("Page 3 clicked")} />
-          </ParallaxLayer>
+
         </Parallax>
       </main>
     </div>
