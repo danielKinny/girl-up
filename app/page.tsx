@@ -55,7 +55,7 @@ export default function Home() {
       </header>
       <main>
   <Parallax
-    pages={3}
+    pages={2}
     className="min-h-screen bg-transparent"
     ref={parallaxRef}
   >
