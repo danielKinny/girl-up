@@ -3,11 +3,14 @@ import React, { useRef, useEffect, useState } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import type { IParallax } from "@react-spring/parallax";
 import SplitText from "../components/SplitText/SplitText";
+import Image from "next/image";
 import {Carousel,
   CarouselContent,
   CarouselItem,
 } from "../components/ui/carousel"
-
+import {
+  CalendarDaysIcon
+} from "@heroicons/react/24/outline";
 import Nav from "@/components/nav";
 
 interface workshop {
@@ -15,6 +18,30 @@ interface workshop {
   name: string;
   description: string;
 }
+
+interface sdg {
+  id: number;
+  alt: string,
+  src: string
+}
+
+const sdgs : sdg[] = [
+  {
+    id: 1,
+    alt: "SDG 5",
+    src: "/sdg5.png"
+  },
+  {
+    id: 2,
+    alt: "SDG 8",
+    src: "/sdg8.png"
+  },
+  {
+    id: 3,
+    alt: "SDG 10",
+    src: "/sdg10.png"
+  }
+]
 
 const workshops: workshop[] = [
   {
@@ -271,15 +298,24 @@ export default function Home() {
           <ParallaxLayer
             offset={1}
             speed={0.4}
-            className="flex flex-col text-white league-spartan items-center justify-center"
+            className="flex text-white league-spartan items-center justify-center gap-8"
           >
-              <h1 className="text-white league-spartan font-bold text-6xl">
-                GIRL UP - A UN INITIATIVE
-              </h1>
-
-              <p className="max-w-4xl text-3xl text-center p-5">
-                Girl Up, a United Nations initiative, empowers young women to become leaders and advocates for gender equality, education, and opportunity worldwide. Through leadership training and advocacy, it inspires students to take action on both local and global issues that affect girls and women. Our school is proud to launch its own Girl Up club, joining this international movement of changemakers. As part of our commitment, we aim to raise awareness, share ideas, and drive meaningful progress toward equality.
-              </p>
+            
+              <div className="text-center">
+                <h1 className="text-white league-spartan font-extrabold text-6xl">
+                  GIRL UP - A UN INITIATIVE
+                </h1>
+                <p className="max-w-4xl text-3xl text-center p-5">
+                  Girl Up, a United Nations initiative, empowers young women to become leaders and advocates for gender equality, education, and opportunity worldwide. Through leadership training and advocacy, it inspires students to take action on both local and global issues that affect girls and women. Our school is proud to launch its own Girl Up club, joining this international movement of changemakers. As part of our commitment, we aim to raise awareness, share ideas, and drive meaningful progress toward equality.
+                </p>
+              </div>
+              <div className="flex flex-col gap-4">
+                {
+                  sdgs.map((sdg) => (
+                    <Image key={sdg.id} className="rounded-xl" width={200} height={200} src={sdg.src} alt={sdg.alt} />
+                  ))
+                }
+              </div>
 
           </ParallaxLayer>
 
@@ -403,14 +439,15 @@ export default function Home() {
             >
               <div className="flex flex-col ml-[5vw] items-center justify-center h-full w-full px-4">
                 <h2 className="text-[12vh] font-bold text-white">SAVE THE DATE</h2>
-                <p className="text-lg text-white max-w-xl">
+                <p className="text-xl text-white max-w-xl text-center">
                   Join us in making a difference! Whether you&apos;re a student,
                   educator, or ally, there are many ways to get involved and
                   support our mission.
                 </p>
               </div>
-              <div className="text-white bg-[#df00f87d] py-2 rounded-lg league-spartan font-bold mr-[5vw]">
-                <h1 className="text-[5vh] text-center">
+              <div className="text-white bg-[#df00f87d] py-2 rounded-4xl league-spartan font-bold mr-[5vw]">
+                <h1 className="text-[5vh] text-center mx-4">
+                  <CalendarDaysIcon className="inline-block h-15 mr-2 mb-3" />
                   22nd November 2025
                 </h1>
               </div>
