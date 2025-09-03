@@ -4,6 +4,12 @@ import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import type { IParallax } from "@react-spring/parallax";
 import SplitText from "../components/SplitText/SplitText";
 import Link from "next/link";
+import {Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from "../components/ui/carousel"
 
 interface workshop {
   id: number;
@@ -69,7 +75,7 @@ export default function Home() {
       >
         <nav className="px-8 mx-auto flex justify-between items-center py-4">
           <Link href="/">
-          <img src="/banner.png" className="h-20 object-contain"/>
+            <img src="/banner.png" className="h-20 object-contain" />
           </Link>
           <ul className="flex space-x-6 text-white text-lg">
             <li>
@@ -271,77 +277,98 @@ export default function Home() {
           <ParallaxLayer
             offset={1}
             speed={1.4}
-            style={{backgroundImage: "url(/realbg4.jpg)",
+            style={{
+              backgroundImage: "url(/realbg4.jpg)",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
               zIndex: 0,
-              backgroundColor: "transparent",}}
-            
+              backgroundColor: "transparent",
+            }}
           >
             <div className="relative flex items-center justify-center gap-4 min-h-screen">
-              <div
-                className="bg-white/80 rounded-2xl shadow-2xl p-10 max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer h-[38vh] w-[32vw] min-w-[320px] min-h-[340px] overflow-auto"
-              >
+              <div className="bg-white/80 rounded-2xl shadow-2xl p-10 max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer h-[38vh] w-[32vw] min-w-[320px] min-h-[340px] overflow-auto">
                 <h2 className="text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent leading-tight mb-2 tracking-tight text-left">
                   WHO <span className="block">ARE WE?</span>
                 </h2>
                 <div className="text-left text-base md:text-md text-[#2a2040] font-medium whitespace-pre-line">
-                  We are a student-led team at our school, committed to empowering the next generation to explore a wide range of career opportunities while promoting equality and inclusion for all. Through our programs and initiatives, we provide young people with the resources, guidance, and inspiration they need to envision their future, free from stereotypes or limitations.
+                  We are a student-led team at our school, committed to
+                  empowering the next generation to explore a wide range of
+                  career opportunities while promoting equality and inclusion
+                  for all. Through our programs and initiatives, we provide
+                  young people with the resources, guidance, and inspiration
+                  they need to envision their future, free from stereotypes or
+                  limitations.
                 </div>
               </div>
-              <div
-                className="bg-white/80 rounded-2xl shadow-2xl p-10 max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer h-[44vh] w-[32vw] min-w-[320px] min-h-[380px] overflow-auto"
-              >
+              <div className="bg-white/80 rounded-2xl shadow-2xl p-10 max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer h-[44vh] w-[32vw] min-w-[320px] min-h-[380px] overflow-auto">
                 <h2 className="text-5xl md:text-7xl font-extrabold leading-tight mb-2 tracking-tight text-left text-purple-400">
                   OUR <span className="block">VISION!</span>
                 </h2>
                 <div className="text-left text-base md:text-lg text-[#2a2040] font-medium whitespace-pre-line">
-                  To create a future where every young person, regardless of gender or background, feels empowered to pursue their dreams and make an impact in the world. We believe that equal opportunities lead to stronger communities and a brighter tomorrow.
+                  To create a future where every young person, regardless of
+                  gender or background, feels empowered to pursue their dreams
+                  and make an impact in the world. We believe that equal
+                  opportunities lead to stronger communities and a brighter
+                  tomorrow.
                 </div>
               </div>
-              <div
-                className="bg-white/80 rounded-2xl shadow-2xl p-10 max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer h-[38vh] w-[32vw] min-w-[320px] min-h-[340px] overflow-auto"
-              >
+              <div className="bg-white/80 rounded-2xl shadow-2xl p-10 max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer h-[38vh] w-[32vw] min-w-[320px] min-h-[340px] overflow-auto">
                 <h2 className="text-5xl md:text-7xl font-extrabold leading-tight mb-2 tracking-tight text-left bg-gradient-to-r from-purple-400 to-blue-100 bg-clip-text text-transparent">
                   YOUR <span className="block">EXPERIENCE!</span>
                 </h2>
                 <div className="text-left text-base md:text-md text-[#2a2040] font-medium whitespace-pre-line">
-                  At this conference, you will take part in engaging workshops, hear from inspiring panelists, and gain valuable insights into a range of career paths. Our conference are designed to foster confidence, broaden perspectives, and spark ambition, all within an inclusive space that champions equality and opportunity for every participant.
+                  At this conference, you will take part in engaging workshops,
+                  hear from inspiring panelists, and gain valuable insights into
+                  a range of career paths. Our conference are designed to foster
+                  confidence, broaden perspectives, and spark ambition, all
+                  within an inclusive space that champions equality and
+                  opportunity for every participant.
                 </div>
               </div>
             </div>
           </ParallaxLayer>
-          <ParallaxLayer offset={2} speed={0.5} style={{backgroundImage: "url(/realbg3.jpg)",
+          <ParallaxLayer
+            offset={2}
+            speed={0.5}
+            style={{
+              backgroundImage: "url(/realbg3.jpg)",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
               zIndex: 0,
-              backgroundColor: "transparent"}}>
-            <div className="flex flex-col justify-center items-center h-full">
-              <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-2 bg-gradient-to-r from-purple-400 to-blue-100 bg-clip-text text-transparent">
-                Our Workshops
-              </h1>
-              <div className=" md:text-lg max-w-2xl text-center text-white font-medium whitespace-pre-line">
-                Join us for our interactive workshops where we explore various
-                topics related to gender equality, leadership, and personal
-                development. Our workshops are designed to empower participants
-                and provide them with the tools they need to succeed.
+              backgroundColor: "transparent",
+            }}
+          >
+            <div className="flex justify-center items-center h-full">
+              <div className="text-white text-center">
+                <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-2 bg-clip-text ">
+                  Our Workshops
+                </h1>
+                <div className=" md:text-lg max-w-2xl text-center text-white font-medium whitespace-pre-line">
+                  Join us for our interactive workshops where we explore various
+                  topics related to gender equality, leadership, and personal
+                  development. Our workshops are designed to empower
+                  participants and provide them with the tools they need to
+                  succeed.
+                </div>
               </div>
-              <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
-                {workshops.map((workshop) => (
-                  <div
-                    key={workshop.id}
-                    className="bg-white/80 rounded-2xl shadow-2xl p-6 flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer"
-                  >
-                    <h3 className="text-xl font-bold text-[#2a2040]">
-                      {workshop.name}
-                    </h3>
-                    <p className="text-base text-[#2a2040]">
-                      {workshop.description}
-                    </p>
-                  </div>
-                ))}
+
+              <div>
+                <Carousel orientation = "vertical">
+                  <CarouselContent className="gap-4">
+                    {workshops.map((workshop) => (
+                      <CarouselItem key={workshop.id} className="md:basis-1/2 lg:basis-1/3 bg-white/20 rounded-xl text-white min-h-[15vh]">
+                        <div className="p-4">
+                          <h3 className="text-lg font-semibold">{workshop.name}</h3>
+                          <p className="text-sm">{workshop.description}</p>
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselNext />
+                  <CarouselPrevious /> 
+                </Carousel>
               </div>
             </div>
           </ParallaxLayer>
