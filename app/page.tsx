@@ -4,39 +4,73 @@ import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import type { IParallax } from "@react-spring/parallax";
 import SplitText from "../components/SplitText/SplitText";
 
+interface workshop {
+  id: number;
+  name: string;
+  description: string;
+}
+
+const workshops: workshop[] = [
+  {
+    id: 1,
+    name: "lorem ipsum",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  },
+  {
+    id: 2,
+    name: "dolor sit amet",
+    description: "Dolor sit amet, consectetur adipiscing elit.",
+  },
+  {
+    id: 3,
+    name: "dolor sit amet",
+    description: "Dolor sit amet, consectetur adipiscing elit.",
+  },
+];
 export default function Home() {
   const parallaxRef = useRef<IParallax>(null); // using a forward reference to manage the root compoooo
   const [headerBlack, setHeaderBlack] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!parallaxRef.current || !parallaxRef.current.container || !parallaxRef.current.container.current) return;
+      if (
+        !parallaxRef.current ||
+        !parallaxRef.current.container ||
+        !parallaxRef.current.container.current
+      )
+        return;
       const container = parallaxRef.current.container.current;
       const scrollTop = container.scrollTop;
       const pageHeight = container.clientHeight;
       const currentPage = scrollTop / pageHeight;
-      setHeaderBlack(currentPage >= 0.8 && currentPage < 1.8);
+      setHeaderBlack(currentPage >= 0.8);
     };
     const container = parallaxRef.current?.container?.current;
     if (container) {
-      container.addEventListener('scroll', handleScroll);
+      container.addEventListener("scroll", handleScroll);
       handleScroll();
     }
     return () => {
-      if (container) container.removeEventListener('scroll', handleScroll);
+      if (container) container.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <div className="relative min-h-screen">
-      <div className="fixed inset-0 -z-50 bg-gradient-to-br from-[#23242b] via-[#2d223a] to-[#1a2634] w-full h-full" aria-hidden="true" />
+      <div
+        className="fixed inset-0 -z-50 bg-gradient-to-br from-[#23242b] via-[#2d223a] to-[#1a2634] w-full h-full"
+        aria-hidden="true"
+      />
       <header
-        className={`absolute top-0 left-0 w-full z-50 ${headerBlack ? 'text-white bg-black/80' : 'text-black bg-[#fef56c]/50'} backdrop-filter backdrop-blur-md rounded-b-xl transition-colors duration-300`}
+        className={`absolute top-0 left-0 w-full z-50 ${
+          headerBlack ? "text-white bg-black/80" : "text-black bg-[#fef56c]/50"
+        } backdrop-filter backdrop-blur-md rounded-b-xl transition-colors duration-300`}
       >
         <nav className="px-8 mx-auto flex justify-between items-center py-4">
           <img src="/banner.png" className="h-20 object-contain" />
           <ul className="flex space-x-6 text-white text-lg">
             <li>
-              <a href="#" className="hover:text-gray-400">
+              <a href="/" className="hover:text-gray-400">
                 Home
               </a>
             </li>
@@ -54,16 +88,16 @@ export default function Home() {
         </nav>
       </header>
       <main>
-  <Parallax
-    pages={2}
-    className="min-h-screen bg-transparent"
-    ref={parallaxRef}
-  >
+        <Parallax
+          pages={3}
+          className="min-h-screen bg-transparent"
+          ref={parallaxRef}
+        >
           <ParallaxLayer
             offset={0}
             speed={0.1}
             style={{
-              backgroundImage: "url(/testing.jpg)",
+              backgroundImage: "url(/realbg.jpg)",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
@@ -78,10 +112,10 @@ export default function Home() {
             className="text-white"
             style={{ zIndex: 1 }}
           >
-            <div className="flex flex-col items-end justify-center h-full w-full pr-24">
+            <div className="flex flex-col items-end justify-center h-full w-full pr-[8vw]">
               <SplitText
                 text="GIRL UP"
-                className="text-[10vw] font-extrabold text-center league-spartan text-[#fdf46b] leading-none"
+                className="text-[16vw] pr-[2vw] font-extrabold text-center anton-font text-[#fdf46b] leading-none"
                 delay={100}
                 duration={0.6}
                 ease="power3.out"
@@ -94,7 +128,7 @@ export default function Home() {
               />
               <SplitText
                 text="EQUALL"
-                className="text-[6vw] font-extrabold text-center league-spartan text-[#fdf46b] leading-none"
+                className="text-[13vw] pr-[3vw] font-extrabold text-center anton-font text-[#fdf46b] leading-none"
                 delay={100}
                 duration={0.6}
                 ease="power3.out"
@@ -231,19 +265,29 @@ export default function Home() {
           */}
 
           {/* the offset at this layer should be changed to 2 once the registration steps are finalized */}
-          <ParallaxLayer offset={1} speed={1.4} style={{ backgroundColor: "white" }}>
+          <ParallaxLayer
+            offset={1}
+            speed={1.4}
+            style={{backgroundImage: "url(/realbg.jpg)",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              zIndex: 0,
+              backgroundColor: "transparent",}}
+            
+          >
             <div className="relative flex items-center justify-center gap-4 min-h-screen">
               <div className="absolute inset-0 -z-10 overflow-hidden">
-                <div className="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-pink-200 opacity-40 rounded-full blur-3xl animate-pulse" />
+                {/**<div className="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-pink-200 opacity-40 rounded-full blur-3xl animate-pulse" />
                 <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-purple-400 opacity-30 rounded-full blur-3xl animate-pulse delay-2000" />
                 <div className="absolute top-1/2 left-1/2 w-[30vw] h-[30vw] bg-blue-300 opacity-30 rounded-full blur-2xl animate-pulse delay-1000" />
                 <div className="absolute bottom-1/3 left-1/4 w-[28vw] h-[28vw] bg-indigo-200 opacity-30 rounded-full blur-2xl animate-pulse delay-1500" />
                 <div className="absolute top-[10%] right-[20%] w-[18vw] h-[18vw] bg-fuchsia-200 opacity-20 rounded-full blur-2xl animate-pulse delay-700" />
                 <div className="absolute top-1/4 left-1/2 w-[12vw] h-[12vw] bg-emerald-200 opacity-10 rounded-full blur-2xl animate-pulse delay-500" />
                 <div className="absolute top-1/4 left-1/2 w-[12vw] h-[12vw] bg-emerald-200 opacity-10 rounded-full blur-2xl animate-pulse delay-500" />
-                <div className="absolute bottom-1/4 left-1/2 w-[12vw] h-[12vw] bg-emerald-200 opacity-10 rounded-full blur-2xl animate-pulse delay-500" />
+                <div className="absolute bottom-1/4 left-1/2 w-[12vw] h-[12vw] bg-emerald-200 opacity-10 rounded-full blur-2xl animate-pulse delay-500" />**/}
               </div>
-              <div className="bg-white/80 max-h-2xl rounded-2xl shadow-2xl p-10 max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer">
+              <div className="bg-white/80 h-2xl rounded-2xl shadow-2xl p-10 w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer">
                 <h2 className="text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent leading-tight mb-2 tracking-tight text-left">
                   WHO <span className="block">ARE WE?</span>
                 </h2>
@@ -256,28 +300,56 @@ export default function Home() {
                   raise awareness about the importance of gender equality.
                 </div>
               </div>
-              <div className="bg-white/80 max-h-2xl rounded-2xl shadow-2xl p-10 max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer">
+              <div className="bg-white/80 h-2xl rounded-2xl shadow-2xl p-10 w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer">
                 <h2 className="text-5xl md:text-7xl font-extrabold leading-tight mb-2 tracking-tight text-left text-purple-400">
                   OUR <span className="block">VISION!</span>
                 </h2>
                 <div className="text-left text-base md:text-lg text-[#2a2040] font-medium whitespace-pre-line">
-                  We believe every woman deserves safety and the chance to lead. Our goal is to create more opportunities for growth and leadership, starting within our own community.
-
-                  We aim to create a safe space for like-minded individuals to spread awareness and nurture bright ideas.
+                  We believe every woman deserves safety and the chance to lead.
+                  Our goal is to create more opportunities for growth and
+                  leadership, starting within our own community. We aim to
+                  create a safe space for like-minded individuals to spread
+                  awareness and nurture bright ideas.
                 </div>
               </div>
-              <div className="bg-white/80 rounded-2xl shadow-2xl p-10 max-w-2xl max-h-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer">
+              <div className="bg-white/80 rounded-2xl shadow-2xl p-10 w-2xl h-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer">
                 <h2 className="text-5xl md:text-7xl font-extrabold leading-tight mb-2 tracking-tight text-left bg-gradient-to-r from-purple-400 to-blue-100 bg-clip-text text-transparent">
                   YOUR <span className="block">EXPERIENCE!</span>
                 </h2>
                 <div className="text-left text-base md:text-lg text-[#2a2040] font-medium whitespace-pre-line">
                   We&apos;re a{" "}
-                  <span className="font-bold">
-                    student-led community
-                  </span>
+                  <span className="font-bold">student-led community</span>
                   .<br />A safe, supportive space where we learn, grow, and
                   raise awareness about the importance of gender equality.
                 </div>
+              </div>
+            </div>
+          </ParallaxLayer>
+          <ParallaxLayer offset={2} speed={0.5}>
+            <div className="flex flex-col justify-center items-center h-full">
+              <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-2 bg-gradient-to-r from-purple-400 to-blue-100 bg-clip-text text-transparent">
+                Our Workshops
+              </h1>
+              <div className=" md:text-lg max-w-2xl text-center text-white font-medium whitespace-pre-line">
+                Join us for our interactive workshops where we explore various
+                topics related to gender equality, leadership, and personal
+                development. Our workshops are designed to empower participants
+                and provide them with the tools they need to succeed.
+              </div>
+              <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
+                {workshops.map((workshop) => (
+                  <div
+                    key={workshop.id}
+                    className="bg-white/80 rounded-2xl shadow-2xl p-6 flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer"
+                  >
+                    <h3 className="text-xl font-bold text-[#2a2040]">
+                      {workshop.name}
+                    </h3>
+                    <p className="text-base text-[#2a2040]">
+                      {workshop.description}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </ParallaxLayer>

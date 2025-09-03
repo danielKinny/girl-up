@@ -6,7 +6,7 @@ export default function Nav() {
           <img src="/banner.png" className="h-20 object-contain" />
           <ul className="flex space-x-6 text-white text-lg">
             <li>
-              <a href="#" className="hover:text-gray-400">
+              <a href="/" className="hover:text-gray-400">
                 Home
               </a>
             </li>
