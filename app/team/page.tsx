@@ -61,7 +61,7 @@ const outreach: TeamMember[] = [
         id: 1,
         name: "Joshua Fernandes",
         role: "Head of Outreach",
-        image: "/team/hi.jpg",
+        image: "/hi.jpg",
         bio: "Alice is passionate about building scalable web applications and leading teams to success."
     },
     {
