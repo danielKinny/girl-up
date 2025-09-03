@@ -3,13 +3,12 @@ import React, { useRef, useEffect, useState } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import type { IParallax } from "@react-spring/parallax";
 import SplitText from "../components/SplitText/SplitText";
-import Link from "next/link";
 import {Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious
 } from "../components/ui/carousel"
+
+import Nav from "@/components/nav";
 
 interface workshop {
   id: number;
@@ -20,18 +19,21 @@ interface workshop {
 const workshops: workshop[] = [
   {
     id: 1,
-    name: "lorem ipsum",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Ethical Dilemma Lab",
+    description:
+      "Participants step into the role of medical or scientific professionals confronted with challenging ethical decisions. The workshop introduces the four pillars of medical ethics—Autonomy, Beneficence, Non-maleficence, and Justice—guiding attendees through real-world scenarios where they must weigh competing values and make thoughtful choices.",
   },
   {
     id: 2,
-    name: "dolor sit amet",
-    description: "Dolor sit amet, consectetur adipiscing elit.",
+    name: "Mock Boardroom Pitch",
+    description:
+      "Teams collaborate to design a social enterprise that addresses a pressing community issue, such as financial literacy or inclusive product design. Each group prepares and delivers a pitch to a simulated board that upholds Girl Up’s values and the UN Sustainable Development Goals, providing a realistic experience of advocating for support and funding.",
   },
   {
     id: 3,
-    name: "dolor sit amet",
-    description: "Dolor sit amet, consectetur adipiscing elit.",
+    name: "Trash to Treasure: SustainHERability",
+    description:
+      "Focusing on innovation, creativity, and teamwork, students receive a selection of recycled materials and are challenged to construct a practical item for everyday use—such as an organizer jar or plant holder. The activity may include a time constraint or a “mini shop” where teams can barter for additional supplies, encouraging resourcefulness and collaboration.",
   },
 ];
 export default function Home() {
@@ -70,35 +72,14 @@ export default function Home() {
       />
       <header
         className={`absolute top-0 left-0 w-full z-50 ${
-          headerBlack ? "text-white bg-black/80" : "text-black bg-[#fef56c]/50"
+          headerBlack ? "text-white bg-black/80" : "text-black bg-[#fef56c]/20"
         } backdrop-filter backdrop-blur-md rounded-b-xl transition-colors duration-300`}
       >
-        <nav className="px-8 mx-auto flex justify-between items-center py-4">
-          <Link href="/">
-            <img src="/banner.png" className="h-20 object-contain" />
-          </Link>
-          <ul className="flex space-x-6 text-white text-lg">
-            <li>
-              <Link href="/" className="hover:text-gray-400">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="/team" className="hover:text-gray-400">
-                The Team
-              </Link>
-            </li>
-            <li>
-              <Link href="#" className="hover:text-gray-400">
-                Contact Us
-              </Link>
-            </li>
-          </ul>
-        </nav>
+        <Nav/>
       </header>
       <main>
         <Parallax
-          pages={3}
+          pages={5}
           className="min-h-screen bg-transparent"
           ref={parallaxRef}
         >
@@ -274,8 +255,37 @@ export default function Home() {
           */}
 
           {/* the offset at this layer should be changed to 2 once the registration steps are finalized */}
+
           <ParallaxLayer
             offset={1}
+            speed={0.4}
+            style={{
+              backgroundImage: "url(/realbg2.jpg)",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              zIndex: 0,
+              backgroundColor: "transparent",
+            }}
+          />
+          <ParallaxLayer
+            offset={1}
+            speed={0.4}
+            className="flex flex-col text-white league-spartan items-center justify-center"
+          >
+              <h1 className="text-white league-spartan font-bold text-6xl">
+                GIRL UP - A UN INITIATIVE
+              </h1>
+
+              <p className="max-w-4xl text-3xl text-center p-5">
+                Girl Up, a United Nations initiative, empowers young women to become leaders and advocates for gender equality, education, and opportunity worldwide. Through leadership training and advocacy, it inspires students to take action on both local and global issues that affect girls and women. Our school is proud to launch its own Girl Up club, joining this international movement of changemakers. As part of our commitment, we aim to raise awareness, share ideas, and drive meaningful progress toward equality.
+              </p>
+
+          </ParallaxLayer>
+
+
+          <ParallaxLayer
+            offset={2}
             speed={1.4}
             style={{
               backgroundImage: "url(/realbg4.jpg)",
@@ -301,7 +311,7 @@ export default function Home() {
                   limitations.
                 </div>
               </div>
-              <div className="bg-white/80 rounded-2xl shadow-2xl p-10 max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer h-[44vh] w-[32vw] min-w-[320px] min-h-[380px] overflow-auto">
+              <div className="bg-white/80 rounded-2xl shadow-2xl p-10 max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer h-[40vh] w-[32vw] min-w-[320px] min-h-[380px] overflow-auto">
                 <h2 className="text-5xl md:text-7xl font-extrabold leading-tight mb-2 tracking-tight text-left text-purple-400">
                   OUR <span className="block">VISION!</span>
                 </h2>
@@ -329,8 +339,9 @@ export default function Home() {
             </div>
           </ParallaxLayer>
           <ParallaxLayer
-            offset={2}
+            offset={3}
             speed={0.5}
+            className="league-spartan"
             style={{
               backgroundImage: "url(/realbg3.jpg)",
               backgroundSize: "cover",
@@ -345,7 +356,7 @@ export default function Home() {
                 <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-2 bg-clip-text ">
                   Our Workshops
                 </h1>
-                <div className=" md:text-lg max-w-2xl text-center text-white font-medium whitespace-pre-line">
+                <div className=" md:text-2xl max-w-2xl text-center text-white font-medium whitespace-pre-line">
                   Join us for our interactive workshops where we explore various
                   topics related to gender equality, leadership, and personal
                   development. Our workshops are designed to empower
@@ -354,24 +365,57 @@ export default function Home() {
                 </div>
               </div>
 
-              <div>
-                <Carousel orientation = "vertical">
-                  <CarouselContent className="gap-4">
+              <div className="pl-[10vw] max-h-[70vh] overflow-y-auto">
+                <Carousel orientation="vertical" opts={{ loop:true, align: "start", slidesToScroll: 1, containScroll: "trimSnaps" }} >
+                  <CarouselContent className="p-8 gap-4">
                     {workshops.map((workshop) => (
-                      <CarouselItem key={workshop.id} className="md:basis-1/2 lg:basis-1/3 bg-white/20 rounded-xl text-white min-h-[15vh]">
-                        <div className="p-4">
-                          <h3 className="text-lg font-semibold">{workshop.name}</h3>
-                          <p className="text-sm">{workshop.description}</p>
+                      <CarouselItem
+                        key={workshop.id}
+                        className="bg-white/70 basis-full backdrop-blur-lg border border-white/60 rounded-2xl shadow-2xl min-h-[15vh] flex items-center justify-center p-0 max-w-xl h-full"
+                      >
+                        <div className="p-6 w-full league-spartan text-gray-900 text-center">
+                          <h3 className="text-2 text-3xl font-bold mb-2">{workshop.name}</h3>
+                          <p className="text-base font-medium opacity-80">{workshop.description}</p>
                         </div>
                       </CarouselItem>
                     ))}
                   </CarouselContent>
-                  <CarouselNext />
-                  <CarouselPrevious /> 
                 </Carousel>
               </div>
             </div>
           </ParallaxLayer>
+
+          <ParallaxLayer
+            offset={4}
+            speed={0.3}
+            style={{
+              backgroundImage: "url(/realbg4.jpg)",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              zIndex: 0,
+              backgroundColor: "transparent",
+            }}/>
+          <ParallaxLayer
+            offset={4}
+            speed={0.3}
+            className="league-spartan flex items-center justify-center"
+            >
+              <div className="flex flex-col ml-[5vw] items-center justify-center h-full w-full px-4">
+                <h2 className="text-[12vh] font-bold text-white">SAVE THE DATE</h2>
+                <p className="text-lg text-white max-w-xl">
+                  Join us in making a difference! Whether you&apos;re a student,
+                  educator, or ally, there are many ways to get involved and
+                  support our mission.
+                </p>
+              </div>
+              <div className="text-white bg-[#df00f87d] py-2 rounded-lg league-spartan font-bold mr-[5vw]">
+                <h1 className="text-[5vh] text-center">
+                  22nd November 2025
+                </h1>
+              </div>
+            </ParallaxLayer>
+
         </Parallax>
       </main>
     </div>

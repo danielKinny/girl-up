@@ -2,7 +2,7 @@
 import React from 'react';
 import Nav from '@/components/nav';
 import { motion } from 'framer-motion';
-
+import Image from "next/image"
 
 interface TeamMember {
     id: number;
@@ -17,14 +17,14 @@ const presidents: TeamMember[] = [
         id: 1,
         name: "Saanvi Sahni",
         role: "President",
-        image: "/hi.jpg",
+        image: "/team/Saanvi.jpg",
         bio: "Saanvi is a passionate advocate for gender equality and leads our team with vision and empathy."
     },
     {
         id: 2,
         name: "Hadiya Habib",
         role: "President",
-        image: "/hi.jpg",
+        image: "/team/Hadiya1.jpg",
         bio: "Hadiya is a dedicated advocate for women's rights and works tirelessly to empower young girls."
     },
 ]
@@ -34,7 +34,7 @@ const vicePresidents : TeamMember[] = [
         id: 1,
         name: "Siyona Haldar",
         role: "Vice President",
-        image: "/hi.jpg",
+        image: "/team/Siyona.jpg",
         bio: "Siyona is a strong advocate for girls' education and empowerment."
     }
 ]
@@ -43,15 +43,15 @@ const conferenceManagement : TeamMember[] = [
     {
         id: 1,
         name: "Sameeha Siddiqui",
-        role: "Conference Manager",
-        image: "/hi.jpg",
+        role: "Head of Conference Management",
+        image: "/team/Sameeha.jpg",
         bio: "Sameeha is an experienced event planner and ensures our conferences run smoothly."
     },
     {
         id: 2,
         name: "Ayesha Sadiq",
-        role: "Conference Manager",
-        image: "/hi.jpg",
+        role: "Head of Conference Management",
+        image: "/team/Ayesha.jpg",
         bio: "Ayesha is a skilled organizer and ensures our events are impactful and well-coordinated."
     }
 ]
@@ -61,16 +61,22 @@ const outreach: TeamMember[] = [
         id: 1,
         name: "Joshua Fernandes",
         role: "Head of Outreach",
-        image: "/hi.jpg",
+        image: "/team/Joshua.jpg",
         bio: "Alice is passionate about building scalable web applications and leading teams to success."
     },
     {
         id: 2,
         name: "Daniel Kinny",
         role: "Head of Outreach",
-        image: "/hi.jpg",
+        image: "/team/Danny.jpg",
         bio: "Bob crafts beautiful and user-friendly interfaces with a focus on accessibility."
-    },
+    },{
+        id: 3,
+        name: "Isha Karuppanchetty",
+        role: "Deputy Head of Outreach",
+        image: "/team/Isha.jpg",
+        bio: "Isha is dedicated to promoting our initiatives and engaging with the community."
+    }
 ];
 
 const mediaMarketing: TeamMember[] = [
@@ -78,16 +84,23 @@ const mediaMarketing: TeamMember[] = [
         id: 1,
         name: "Melissa Mathias",
         role: "Head of Media and Marketing",
-        image: "/hi.jpg",
+        image: "/team/Melissa.jpg",
         bio: "Melissa leads our media campaigns and ensures our message reaches the right audience."
     },
     {
         id: 2,
         name: "Nicole Fernando",
         role: "Head of Media and Marketing",
-        image: "/hi.jpg",
+        image: "/team/Nicole.jpg",
         bio: "Ethan crafts engaging content for all our platforms."
     },
+    {
+        id: 3,
+        name: "Anaaya Nair",
+        role: "Deputy Head of Media and Marketing",
+        image: "/team/Ayaana.jpg",
+        bio: "Anaaya is a creative marketer with a passion for storytelling."
+    }
 ];
 
 const admins: TeamMember[] = [
@@ -95,13 +108,13 @@ const admins: TeamMember[] = [
         id: 1,
         name: "Souparnika Praveen",
         role: "Head of Admins",
-        image: "/hi.jpg",
+        image: "/team/Souparnika.jpg",
         bio: "Souparnika manages our administrative tasks and ensures smooth operations."
     },{
         id: 2,
         name: "Fahim Suleiman",
         role: "Head of Admins",
-        image: "/hi.jpg",
+        image: "/team/Fahim.jpg",
         bio: "Fahim oversees our admin team and ensures efficient operations."
     }
 ]
@@ -110,40 +123,63 @@ const logistics: TeamMember[] = [
     {
         id: 1,
         name: "Suhasini Arun",
-        role: "Logistics Lead",
-        image: "/hi.jpg",
+        role: "Head of Logistics",
+        image: "/team/Suhasini.jpg",
         bio: "George coordinates all event logistics and operations."
     },
     {
         id: 2,
         name: "Vrusheen Pillai",
-        role: "Event Coordinator",
-        image: "/hi.jpg",
+        role: "Head of Logistics",
+        image: "/team/Vrusheen.jpg",
         bio: "Vrusheen ensures every event runs smoothly from start to finish."
-    },
+    },{
+        id: 3,
+        name: "Bianca Santiaguel",
+        role: "Deputy Head of Logistics",
+        image: "/team/Bianca.jpg",
+        bio: "Bianca is responsible for managing logistics and ensuring smooth operations."
+    }
 ];
 
 const finance: TeamMember[] = [
     {
         id: 1,
         name: "Samya Jain",
-        role: "Finance Manager",
-        image: "/hi.jpg",
+        role: "Head of Finance",
+        image: "/team/Samya.jpg",
         bio: "Ian oversees budgeting and financial planning."
     },
     {
         id: 2,
         name: "Minha Shanod",
-        role: "Accountant",
-        image: "/hi.jpg",
+        role: "Head of Finance",
+        image: "/team/Minha.jpg",
         bio: "Minha manages accounts and financial records."
     },
+    {
+        id: 3,
+        name: "Jan Santiaguel",
+        role: "Deputy Head of Finance",
+        image: "/team/Jan.jpg",
+        bio: "Jan assists in managing financial operations and reporting."
+    }
 ];
+
+const facultyLeader : TeamMember[] = [
+    {
+        id: 1,
+        name: "Nikhil Patel",
+        role: "Faculty Leader",
+        image: "/hi.jpg",
+        bio: "Alice is passionate about building scalable web applications and leading teams to success."
+    }
+]
 
 const memberCard = (member: TeamMember, idx: number) => {
     return (
-        <div className='border border-black py-8 text-black rounded-lg'  key={idx}>
-            <img className="py-8" src={member.image} alt={member.name}/>
+        <div className='border border-black py-8 text-black rounded-lg min-h-4xl'  key={idx}>
+            <Image width={300} height={464} className="overflow-auto py-8 object-contain" src={member.image} alt={member.name}/>
             <h3 className="text-lg text-center font-bold">{member.name}</h3>
             <p className="text-lg text-center">{member.role}</p>
         </div>
@@ -164,13 +200,16 @@ const TeamPage = () => {
 
             <main className="pt-32 max-w-6xl mx-auto px-4">
                 {[
-                    { title: 'PRESIDENTIAL SUITE', data: presidents },
+                    { title: 'FACULTY LEADER', data: facultyLeader },
+                    { title: 'PRESIDENTS', data: presidents },
                     { title: 'VICE PRESIDENT', data: vicePresidents},
                     { title: 'CONFERENCE MANAGEMENT', data: conferenceManagement},
                     { title: 'OUTREACH TEAM', data: outreach },
                     { title: 'MEDIA & MARKETING TEAM', data: mediaMarketing },
+                    { title: 'ADMIN TEAM', data: admins },
                     { title: 'LOGISTICS TEAM', data: logistics },
                     { title: 'FINANCE TEAM', data: finance },
+
                 ].map((section, i) => (
                     <motion.section
                         key={section.title}
@@ -190,7 +229,7 @@ const TeamPage = () => {
                         >
                             {section.title}
                         </motion.h1>
-                        <div className="flex flex-col-1 gap-10">
+                        <div className="flex items-center justify-center gap-10">
                             {section.data.map((member, idx) => memberCard(member, idx))}
                         </div>
                     </motion.section>
