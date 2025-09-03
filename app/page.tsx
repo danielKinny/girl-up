@@ -3,6 +3,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import type { IParallax } from "@react-spring/parallax";
 import SplitText from "../components/SplitText/SplitText";
+import Link from "next/link";
 
 interface workshop {
   id: number;
@@ -43,7 +44,7 @@ export default function Home() {
       const scrollTop = container.scrollTop;
       const pageHeight = container.clientHeight;
       const currentPage = scrollTop / pageHeight;
-      setHeaderBlack(currentPage >= 0.8);
+      setHeaderBlack(currentPage >= 6.8);
     };
     const container = parallaxRef.current?.container?.current;
     if (container) {
@@ -58,7 +59,7 @@ export default function Home() {
   return (
     <div className="relative min-h-screen">
       <div
-        className="fixed inset-0 -z-50 bg-gradient-to-br from-[#23242b] via-[#2d223a] to-[#1a2634] w-full h-full"
+        className="fixed inset-0 -z-50 bg-[#FF7A77] w-full h-full"
         aria-hidden="true"
       />
       <header
@@ -67,22 +68,24 @@ export default function Home() {
         } backdrop-filter backdrop-blur-md rounded-b-xl transition-colors duration-300`}
       >
         <nav className="px-8 mx-auto flex justify-between items-center py-4">
-          <img src="/banner.png" className="h-20 object-contain" />
+          <Link href="/">
+          <img src="/banner.png" className="h-20 object-contain"/>
+          </Link>
           <ul className="flex space-x-6 text-white text-lg">
             <li>
-              <a href="/" className="hover:text-gray-400">
+              <Link href="/" className="hover:text-gray-400">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/team" className="hover:text-gray-400">
+              <Link href="/team" className="hover:text-gray-400">
                 The Team
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:text-gray-400">
+              <Link href="#" className="hover:text-gray-400">
                 Contact Us
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
@@ -268,7 +271,7 @@ export default function Home() {
           <ParallaxLayer
             offset={1}
             speed={1.4}
-            style={{backgroundImage: "url(/realbg.jpg)",
+            style={{backgroundImage: "url(/realbg4.jpg)",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
@@ -277,55 +280,44 @@ export default function Home() {
             
           >
             <div className="relative flex items-center justify-center gap-4 min-h-screen">
-              <div className="absolute inset-0 -z-10 overflow-hidden">
-                {/**<div className="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-pink-200 opacity-40 rounded-full blur-3xl animate-pulse" />
-                <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-purple-400 opacity-30 rounded-full blur-3xl animate-pulse delay-2000" />
-                <div className="absolute top-1/2 left-1/2 w-[30vw] h-[30vw] bg-blue-300 opacity-30 rounded-full blur-2xl animate-pulse delay-1000" />
-                <div className="absolute bottom-1/3 left-1/4 w-[28vw] h-[28vw] bg-indigo-200 opacity-30 rounded-full blur-2xl animate-pulse delay-1500" />
-                <div className="absolute top-[10%] right-[20%] w-[18vw] h-[18vw] bg-fuchsia-200 opacity-20 rounded-full blur-2xl animate-pulse delay-700" />
-                <div className="absolute top-1/4 left-1/2 w-[12vw] h-[12vw] bg-emerald-200 opacity-10 rounded-full blur-2xl animate-pulse delay-500" />
-                <div className="absolute top-1/4 left-1/2 w-[12vw] h-[12vw] bg-emerald-200 opacity-10 rounded-full blur-2xl animate-pulse delay-500" />
-                <div className="absolute bottom-1/4 left-1/2 w-[12vw] h-[12vw] bg-emerald-200 opacity-10 rounded-full blur-2xl animate-pulse delay-500" />**/}
-              </div>
-              <div className="bg-white/80 h-2xl rounded-2xl shadow-2xl p-10 w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer">
+              <div
+                className="bg-white/80 rounded-2xl shadow-2xl p-10 max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer h-[38vh] w-[32vw] min-w-[320px] min-h-[340px] overflow-auto"
+              >
                 <h2 className="text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent leading-tight mb-2 tracking-tight text-left">
                   WHO <span className="block">ARE WE?</span>
                 </h2>
-                <div className="text-left text-base md:text-lg text-[#2a2040] font-medium whitespace-pre-line">
-                  We&apos;re a{" "}
-                  <span className="font-bold">
-                    student + teacher-led community
-                  </span>
-                  .<br />A safe, supportive space where we learn, grow, and
-                  raise awareness about the importance of gender equality.
+                <div className="text-left text-base md:text-md text-[#2a2040] font-medium whitespace-pre-line">
+                  We are a student-led team at our school, committed to empowering the next generation to explore a wide range of career opportunities while promoting equality and inclusion for all. Through our programs and initiatives, we provide young people with the resources, guidance, and inspiration they need to envision their future, free from stereotypes or limitations.
                 </div>
               </div>
-              <div className="bg-white/80 h-2xl rounded-2xl shadow-2xl p-10 w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer">
+              <div
+                className="bg-white/80 rounded-2xl shadow-2xl p-10 max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer h-[44vh] w-[32vw] min-w-[320px] min-h-[380px] overflow-auto"
+              >
                 <h2 className="text-5xl md:text-7xl font-extrabold leading-tight mb-2 tracking-tight text-left text-purple-400">
                   OUR <span className="block">VISION!</span>
                 </h2>
                 <div className="text-left text-base md:text-lg text-[#2a2040] font-medium whitespace-pre-line">
-                  We believe every woman deserves safety and the chance to lead.
-                  Our goal is to create more opportunities for growth and
-                  leadership, starting within our own community. We aim to
-                  create a safe space for like-minded individuals to spread
-                  awareness and nurture bright ideas.
+                  To create a future where every young person, regardless of gender or background, feels empowered to pursue their dreams and make an impact in the world. We believe that equal opportunities lead to stronger communities and a brighter tomorrow.
                 </div>
               </div>
-              <div className="bg-white/80 rounded-2xl shadow-2xl p-10 w-2xl h-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer">
+              <div
+                className="bg-white/80 rounded-2xl shadow-2xl p-10 max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer h-[38vh] w-[32vw] min-w-[320px] min-h-[340px] overflow-auto"
+              >
                 <h2 className="text-5xl md:text-7xl font-extrabold leading-tight mb-2 tracking-tight text-left bg-gradient-to-r from-purple-400 to-blue-100 bg-clip-text text-transparent">
                   YOUR <span className="block">EXPERIENCE!</span>
                 </h2>
-                <div className="text-left text-base md:text-lg text-[#2a2040] font-medium whitespace-pre-line">
-                  We&apos;re a{" "}
-                  <span className="font-bold">student-led community</span>
-                  .<br />A safe, supportive space where we learn, grow, and
-                  raise awareness about the importance of gender equality.
+                <div className="text-left text-base md:text-md text-[#2a2040] font-medium whitespace-pre-line">
+                  At this conference, you will take part in engaging workshops, hear from inspiring panelists, and gain valuable insights into a range of career paths. Our conference are designed to foster confidence, broaden perspectives, and spark ambition, all within an inclusive space that champions equality and opportunity for every participant.
                 </div>
               </div>
             </div>
           </ParallaxLayer>
-          <ParallaxLayer offset={2} speed={0.5}>
+          <ParallaxLayer offset={2} speed={0.5} style={{backgroundImage: "url(/realbg3.jpg)",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              zIndex: 0,
+              backgroundColor: "transparent"}}>
             <div className="flex flex-col justify-center items-center h-full">
               <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-2 bg-gradient-to-r from-purple-400 to-blue-100 bg-clip-text text-transparent">
                 Our Workshops

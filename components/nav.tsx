@@ -1,25 +1,29 @@
 import React from "react";
-
+import Link from "next/link"
 export default function Nav() {
     return (
+      <div>
         <nav className="px-8 mx-auto flex justify-between items-center py-4">
-          <img src="/banner.png" className="h-20 object-contain" />
+          <Link href="/">
+            <img src="/banner.png" className="h-20 object-contain" />
+          </Link>
           <ul className="flex space-x-6 text-white text-lg">
             <li>
-              <a href="/" className="hover:text-gray-400">
+              <Link href="/" className="hover:text-gray-400">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/team" className="hover:text-gray-400">
+              <Link href="/team" className="hover:text-gray-400">
                 The Team
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:text-gray-400">
+              <Link href="/" className="hover:text-gray-400">
                 Contact Us
-              </a>
+              </Link>
             </li>
           </ul>
-        </nav>)
+        </nav>
+      </div>)
 }
