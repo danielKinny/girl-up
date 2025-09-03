@@ -213,7 +213,7 @@ const TeamPage = () => {
                 ].map((section, i) => (
                     <motion.section
                         key={section.title}
-                        className="mb-16"
+                        className="mb-16 "
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.2 }}
@@ -229,7 +229,7 @@ const TeamPage = () => {
                         >
                             {section.title}
                         </motion.h1>
-                        <div className="flex items-center justify-center gap-10">
+                        <div className="flex flex-col w-full items-center gap-10 sm:flex-row sm:justify-center">
                             {section.data.map((member, idx) => memberCard(member, idx))}
                         </div>
                     </motion.section>

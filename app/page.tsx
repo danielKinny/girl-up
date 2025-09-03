@@ -92,7 +92,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative min-h-screen">
+  <div className="relative min-h-screen">
       <div
         className="fixed inset-0 -z-50 bg-[#FF7A77] w-full h-full"
         aria-hidden="true"
@@ -102,7 +102,7 @@ export default function Home() {
           headerBlack ? "text-white bg-black/80" : "text-black bg-[#fef56c]/20"
         } backdrop-filter backdrop-blur-md rounded-b-xl transition-colors duration-300`}
       >
-        <Nav/>
+        <Nav />
       </header>
       <main>
         <Parallax
@@ -129,7 +129,7 @@ export default function Home() {
             className="text-white"
             style={{ zIndex: 1 }}
           >
-            <div className="flex flex-col items-end justify-center h-full w-full pr-[8vw]">
+            <div className="flex flex-col items-end justify-center h-full w-full pr-[8vw] sm:pr-[4vw] md:pr-[8vw]">
               <SplitText
                 text="GIRL UP"
                 className="text-[16vw] pr-[2vw] font-extrabold text-center anton-font text-[#fdf46b] leading-none"
@@ -298,24 +298,25 @@ export default function Home() {
           <ParallaxLayer
             offset={1}
             speed={0.4}
-            className="flex text-white league-spartan items-center justify-center gap-8"
+            className="flex flex-col text-white league-spartan items-center justify-center gap-8 md:gap-16 px-4 md:px-0 mt-8 sm:mt-12 md:mt-20 min-h-[70vh]"
           >
-            
-              <div className="text-center">
-                <h1 className="text-white league-spartan font-extrabold text-6xl">
+            <div className="flex flex-col items-center w-full">
+              <div className="text-center w-full max-w-2xl md:max-w-4xl mt-4 sm:mt-8 mx-auto">
+                <h1 className="text-white text-center league-spartan font-extrabold text-3xl sm:text-4xl md:text-6xl">
                   GIRL UP - A UN INITIATIVE
                 </h1>
-                <p className="max-w-4xl text-3xl text-center p-5">
+                <p className="text-lg sm:text-xl md:text-3xl text-center p-2 sm:p-4 md:p-5">
                   Girl Up, a United Nations initiative, empowers young women to become leaders and advocates for gender equality, education, and opportunity worldwide. Through leadership training and advocacy, it inspires students to take action on both local and global issues that affect girls and women. Our school is proud to launch its own Girl Up club, joining this international movement of changemakers. As part of our commitment, we aim to raise awareness, share ideas, and drive meaningful progress toward equality.
                 </p>
               </div>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-row gap-4 items-center mt-6">
                 {
                   sdgs.map((sdg) => (
-                    <Image key={sdg.id} className="rounded-xl" width={200} height={200} src={sdg.src} alt={sdg.alt} />
+                    <Image key={sdg.id} className="rounded-xl w-20 h-20 sm:w-28 sm:h-28 md:w-40 md:h-40 object-contain" width={160} height={160} src={sdg.src} alt={sdg.alt} />
                   ))
                 }
               </div>
+            </div>
 
           </ParallaxLayer>
 
@@ -332,12 +333,12 @@ export default function Home() {
               backgroundColor: "transparent",
             }}
           >
-            <div className="relative flex items-center justify-center gap-4 min-h-screen">
-              <div className="bg-white/80 rounded-2xl shadow-2xl p-10 max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer h-[38vh] w-[32vw] min-w-[320px] min-h-[340px] overflow-auto">
-                <h2 className="text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent leading-tight mb-2 tracking-tight text-left">
+            <div className="relative flex flex-col lg:flex-row items-center justify-center gap-6 md:gap-4 min-h-screen px-2 md:px-8 py-8">
+              <div className="bg-white/80 rounded-2xl shadow-2xl p-4 sm:p-6 md:p-10 max-w-lg md:max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer min-w-[220px] min-h-[260px] md:min-h-[340px] overflow-auto w-full lg:w-[32vw] h-auto lg:h-[38vh]">
+                <h2 className="text-3xl sm:text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent leading-tight mb-2 tracking-tight text-left">
                   WHO <span className="block">ARE WE?</span>
                 </h2>
-                <div className="text-left text-base md:text-md text-[#2a2040] font-medium whitespace-pre-line">
+                <div className="text-left text-sm sm:text-base md:text-md text-[#2a2040] font-medium whitespace-pre-line">
                   We are a student-led team at our school, committed to
                   empowering the next generation to explore a wide range of
                   career opportunities while promoting equality and inclusion
@@ -347,11 +348,11 @@ export default function Home() {
                   limitations.
                 </div>
               </div>
-              <div className="bg-white/80 rounded-2xl shadow-2xl p-10 max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer h-[40vh] w-[32vw] min-w-[320px] min-h-[380px] overflow-auto">
-                <h2 className="text-5xl md:text-7xl font-extrabold leading-tight mb-2 tracking-tight text-left text-purple-400">
+              <div className="bg-white/80 rounded-2xl shadow-2xl p-4 sm:p-6 md:p-10 max-w-lg md:max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer min-w-[220px] min-h-[280px] md:min-h-[380px] overflow-auto w-full lg:w-[32vw] h-auto lg:h-[40vh]">
+                <h2 className="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-2 tracking-tight text-left text-purple-400">
                   OUR <span className="block">VISION!</span>
                 </h2>
-                <div className="text-left text-base md:text-lg text-[#2a2040] font-medium whitespace-pre-line">
+                <div className="text-left text-sm sm:text-base md:text-lg text-[#2a2040] font-medium whitespace-pre-line">
                   To create a future where every young person, regardless of
                   gender or background, feels empowered to pursue their dreams
                   and make an impact in the world. We believe that equal
@@ -359,11 +360,11 @@ export default function Home() {
                   tomorrow.
                 </div>
               </div>
-              <div className="bg-white/80 rounded-2xl shadow-2xl p-10 max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer h-[38vh] w-[32vw] min-w-[320px] min-h-[340px] overflow-auto">
-                <h2 className="text-5xl md:text-7xl font-extrabold leading-tight mb-2 tracking-tight text-left bg-gradient-to-r from-purple-400 to-blue-100 bg-clip-text text-transparent">
+              <div className="bg-white/80 rounded-2xl shadow-2xl p-4 sm:p-6 md:p-10 max-w-lg md:max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer min-w-[220px] min-h-[260px] md:min-h-[340px] overflow-auto w-full lg:w-[32vw] h-auto lg:h-[38vh]">
+                <h2 className="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-2 tracking-tight text-left bg-gradient-to-r from-purple-400 to-blue-100 bg-clip-text text-transparent">
                   YOUR <span className="block">EXPERIENCE!</span>
                 </h2>
-                <div className="text-left text-base md:text-md text-[#2a2040] font-medium whitespace-pre-line">
+                <div className="text-left text-sm sm:text-base md:text-md text-[#2a2040] font-medium whitespace-pre-line">
                   At this conference, you will take part in engaging workshops,
                   hear from inspiring panelists, and gain valuable insights into
                   a range of career paths. Our conference are designed to foster
@@ -387,12 +388,12 @@ export default function Home() {
               backgroundColor: "transparent",
             }}
           >
-            <div className="flex justify-center items-center h-full">
-              <div className="text-white text-center">
-                <h1 className="text-5xl md:text-7xl font-extrabold leading-tight mb-2 bg-clip-text ">
+            <div className="flex flex-col md:flex-row justify-center items-center h-full gap-6 md:gap-12 px-2 md:px-8 py-8 mt-8 sm:mt-12 md:mt-20">
+              <div className="text-white text-center md:text-left flex-1 mt-4 sm:mt-8">
+                <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-2 bg-clip-text ">
                   Our Workshops
                 </h1>
-                <div className=" md:text-2xl max-w-2xl text-center text-white font-medium whitespace-pre-line">
+                <div className="text-base sm:text-xl md:text-2xl max-w-xl md:max-w-2xl text-center md:text-left text-white font-medium whitespace-pre-line mx-auto md:mx-0">
                   Join us for our interactive workshops where we explore various
                   topics related to gender equality, leadership, and personal
                   development. Our workshops are designed to empower
@@ -400,18 +401,17 @@ export default function Home() {
                   succeed.
                 </div>
               </div>
-
-              <div className="pl-[10vw] max-h-[70vh] overflow-y-auto">
+              <div className="w-full md:w-auto max-h-[60vh] md:max-h-[70vh] overflow-y-auto flex-1">
                 <Carousel orientation="vertical" opts={{ loop:true, align: "start", slidesToScroll: 1, containScroll: "trimSnaps" }} >
-                  <CarouselContent className="p-8 gap-4">
+                  <CarouselContent className="p-4 sm:p-6 md:p-8 gap-4">
                     {workshops.map((workshop) => (
                       <CarouselItem
                         key={workshop.id}
                         className="bg-white/70 basis-full backdrop-blur-lg border border-white/60 rounded-2xl shadow-2xl min-h-[15vh] flex items-center justify-center p-0 max-w-xl h-full"
                       >
-                        <div className="p-6 w-full league-spartan text-gray-900 text-center">
-                          <h3 className="text-2 text-3xl font-bold mb-2">{workshop.name}</h3>
-                          <p className="text-base font-medium opacity-80">{workshop.description}</p>
+                        <div className="p-4 sm:p-6 w-full league-spartan text-gray-900 text-center">
+                          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">{workshop.name}</h3>
+                          <p className="text-sm sm:text-base font-medium opacity-80">{workshop.description}</p>
                         </div>
                       </CarouselItem>
                     ))}
@@ -435,19 +435,19 @@ export default function Home() {
           <ParallaxLayer
             offset={4}
             speed={0.3}
-            className="league-spartan flex items-center justify-center"
+            className="league-spartan flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 px-2 md:px-8 py-8"
             >
-              <div className="flex flex-col ml-[5vw] items-center justify-center h-full w-full px-4">
-                <h2 className="text-[12vh] font-bold text-white">SAVE THE DATE</h2>
-                <p className="text-xl text-white max-w-xl text-center">
+              <div className="flex flex-col items-center justify-center h-full w-full px-2 md:px-4 mb-4 md:mb-0">
+                <h2 className="text-3xl sm:text-5xl md:text-[12vh] font-bold text-white text-center">SAVE THE DATE</h2>
+                <p className="text-base sm:text-lg md:text-xl text-white max-w-xl text-center mt-2">
                   Join us in making a difference! Whether you&apos;re a student,
                   educator, or ally, there are many ways to get involved and
                   support our mission.
                 </p>
               </div>
-              <div className="text-white bg-[#df00f87d] py-2 rounded-4xl league-spartan font-bold mr-[5vw]">
-                <h1 className="text-[5vh] text-center mx-4">
-                  <CalendarDaysIcon className="inline-block h-15 mr-2 mb-3" />
+              <div className="text-white bg-[#df00f87d] py-2 rounded-4xl league-spartan font-bold px-4 md:mr-[5vw]">
+                <h1 className="text-xl sm:text-3xl md:text-[5vh] text-center mx-2 md:mx-4">
+                  <CalendarDaysIcon className="inline-block h-8 sm:h-10 md:h-15 mr-2 mb-1 md:mb-3" />
                   22nd November 2025
                 </h1>
               </div>
