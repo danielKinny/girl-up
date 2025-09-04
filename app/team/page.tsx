@@ -221,7 +221,7 @@ const TeamPage = () => {
                         transition={{ delay: i * 0.06, duration: 0.22 }}
                     >
                         <motion.h1
-                            className="text-6xl text-pink-700 league-spartan font-bold text-center p-8 drop-shadow-md"
+                            className="text-6xl text-pink-700 league-spartan font-bold text-center p-8 drop-shadow-md flex-wrap"
                             initial={{ opacity: 0, y: 8 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.32, delay: i * 0.06, ease: 'easeOut' }}
