@@ -29,18 +29,13 @@ const sdgs : sdg[] = [
   {
     id: 1,
     alt: "SDG 5",
-    src: "/sdg5.png"
+    src: "/unemblem.png"
   },
   {
     id: 2,
     alt: "SDG 8",
-    src: "/sdg8.png"
+    src: "/formallogo.png"
   },
-  {
-    id: 3,
-    alt: "SDG 10",
-    src: "/sdg10.png"
-  }
 ]
 
 const workshops: workshop[] = [
