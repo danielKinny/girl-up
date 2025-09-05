@@ -166,16 +166,6 @@ const finance: TeamMember[] = [
     }
 ];
 
-const facultyLeader : TeamMember[] = [
-    {
-        id: 1,
-        name: "Nikhil Patel",
-        role: "Faculty Leader",
-        image: "/hi.jpg",
-        bio: "Alice is passionate about building scalable web applications and leading teams to success."
-    }
-]
-
 const memberCard = (member: TeamMember, idx: number) => {
     return (
         <div className='border border-black py-8 text-black rounded-lg min-h-4xl'  key={idx}>
@@ -200,7 +190,6 @@ const TeamPage = () => {
 
             <main className="pt-32 max-w-6xl mx-auto px-4">
                 {[
-                    { title: 'FACULTY LEADER', data: facultyLeader },
                     { title: 'PRESIDENTS', data: presidents },
                     { title: 'VICE PRESIDENT', data: vicePresidents},
                     { title: 'CONFERENCE MANAGEMENT', data: conferenceManagement},

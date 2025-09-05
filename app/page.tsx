@@ -295,8 +295,8 @@ export default function Home() {
             speed={0.4}
             className="flex flex-col text-white league-spartan items-center justify-center gap-8 md:gap-16 px-4 md:px-0 mt-8 sm:mt-12 md:mt-20 min-h-[70vh]"
           >
-            <div className="flex flex-col items-center w-full">
-              <div className="text-center w-full max-w-2xl md:max-w-4xl mt-4 sm:mt-8 mx-auto">
+            <div className="flex flex-col items-center w-full mb-20">
+              <div className="text-center w-full max-w-4xl md:max-w-7xl mt-4 sm:mt-8 mx-auto ">
                 <h1 className="text-white text-center league-spartan font-extrabold text-3xl sm:text-4xl md:text-6xl">
                   GIRL UP - A UN INITIATIVE
                 </h1>
@@ -328,45 +328,48 @@ export default function Home() {
               backgroundColor: "transparent",
             }}
           >
-            <div className="relative flex flex-col lg:flex-row items-center justify-center gap-6 md:gap-4 min-h-screen px-2 md:px-8 py-8">
-              <div className="bg-white/80 rounded-2xl shadow-2xl p-4 sm:p-6 md:p-10 max-w-lg md:max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer min-w-[220px] min-h-[260px] md:min-h-[340px] overflow-auto w-full lg:w-[32vw] h-auto lg:h-[38vh]">
-                <h2 className="text-3xl sm:text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent leading-tight mb-2 tracking-tight text-left">
-                  WHO <span className="block">ARE WE?</span>
-                </h2>
-                <div className="text-left text-sm sm:text-base md:text-md text-[#2a2040] font-medium whitespace-pre-line">
-                  We are a student-led team at our school, committed to
-                  empowering the next generation to explore a wide range of
-                  career opportunities while promoting equality and inclusion
-                  for all. Through our programs and initiatives, we provide
-                  young people with the resources, guidance, and inspiration
-                  they need to envision their future, free from stereotypes or
-                  limitations.
-                </div>
+            <div
+              className="relative flex flex-col lg:flex-row items-center justify-center gap-6 md:gap-4 min-h-screen px-2 md:px-8 py-8 overflow-hidden"
+
+            >
+              <div className="bg-white/80 rounded-2xl shadow-2xl p-4 sm:p-6 md:p-10 max-w-lg md:max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer min-w-[220px] min-h-[220px] md:min-h-[340px] w-full lg:w-[32vw] h-auto lg:h-[38vh] overflow-hidden">
+              <h2 className="text-3xl sm:text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent leading-tight mb-2 tracking-tight text-left">
+                WHO <span className="block">ARE WE?</span>
+              </h2>
+              <div className="text-left text-sm sm:text-base md:text-md text-[#2a2040] font-medium whitespace-pre-line">
+                We are a student-led team at our school, committed to
+                empowering the next generation to explore a wide range of
+                career opportunities while promoting equality and inclusion
+                for all. Through our programs and initiatives, we provide
+                young people with the resources, guidance, and inspiration
+                they need to envision their future, free from stereotypes or
+                limitations.
               </div>
-              <div className="bg-white/80 rounded-2xl shadow-2xl p-4 sm:p-6 md:p-10 max-w-lg md:max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer min-w-[220px] min-h-[280px] md:min-h-[380px] overflow-auto w-full lg:w-[32vw] h-auto lg:h-[40vh]">
-                <h2 className="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-2 tracking-tight text-left text-purple-400">
-                  OUR <span className="block">VISION!</span>
-                </h2>
-                <div className="text-left text-sm sm:text-base md:text-lg text-[#2a2040] font-medium whitespace-pre-line">
-                  To create a future where every young person, regardless of
-                  gender or background, feels empowered to pursue their dreams
-                  and make an impact in the world. We believe that equal
-                  opportunities lead to stronger communities and a brighter
-                  tomorrow.
-                </div>
               </div>
-              <div className="bg-white/80 rounded-2xl shadow-2xl p-4 sm:p-6 md:p-10 max-w-lg md:max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer min-w-[220px] min-h-[260px] md:min-h-[340px] overflow-auto w-full lg:w-[32vw] h-auto lg:h-[38vh]">
-                <h2 className="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-2 tracking-tight text-left bg-gradient-to-r from-purple-400 to-blue-100 bg-clip-text text-transparent">
-                  YOUR <span className="block">EXPERIENCE!</span>
-                </h2>
-                <div className="text-left text-sm sm:text-base md:text-md text-[#2a2040] font-medium whitespace-pre-line">
-                  At this conference, you will take part in engaging workshops,
-                  hear from inspiring panelists, and gain valuable insights into
-                  a range of career paths. Our conference are designed to foster
-                  confidence, broaden perspectives, and spark ambition, all
-                  within an inclusive space that champions equality and
-                  opportunity for every participant.
-                </div>
+              <div className="bg-white/80 rounded-2xl shadow-2xl p-4 sm:p-6 md:p-10 max-w-lg md:max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer min-w-[220px] min-h-[280px] md:min-h-[380px] w-full lg:w-[32vw] h-auto lg:h-[40vh] overflow-hidden">
+              <h2 className="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-2 tracking-tight text-left text-purple-400">
+                OUR <span className="block">VISION!</span>
+              </h2>
+              <div className="text-left text-sm sm:text-base md:text-md text-[#2a2040] font-medium whitespace-pre-line">
+                To create a future where every young person, regardless of
+                gender or background, feels empowered to pursue their dreams
+                and make an impact in the world. We believe that equal
+                opportunities lead to stronger communities and a brighter
+                tomorrow.
+              </div>
+              </div>
+              <div className="bg-white/80 rounded-2xl shadow-2xl p-4 sm:p-6 md:p-10 max-w-lg md:max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer min-w-[220px] min-h-[260px] md:min-h-[340px] w-full lg:w-[32vw] h-auto lg:h-[38vh] overflow-hidden">
+              <h2 className="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-2 tracking-tight text-left bg-gradient-to-r from-purple-400 to-blue-100 bg-clip-text text-transparent">
+                YOUR <span className="block">EXPERIENCE!</span>
+              </h2>
+              <div className="text-left text-sm sm:text-base md:text-md text-[#2a2040] font-medium whitespace-pre-line">
+                At this conference, you will take part in engaging workshops,
+                hear from inspiring panelists, and gain valuable insights into
+                a range of career paths. Our conference are designed to foster
+                confidence, broaden perspectives, and spark ambition, all
+                within an inclusive space that champions equality and
+                opportunity for every participant.
+              </div>
               </div>
             </div>
           </ParallaxLayer>
@@ -383,8 +386,8 @@ export default function Home() {
               backgroundColor: "transparent",
             }}
           >
-            <div className="flex flex-col md:flex-row justify-center items-center h-full gap-6 md:gap-12 px-2 md:px-8 py-8 mt-8 sm:mt-12 md:mt-20">
-              <div className="text-white text-center md:text-left flex-1 mt-4 sm:mt-8">
+            <div className="flex flex-col md:flex-row justify-center items-center h-full gap-6 md:gap-12 px-2 md:px-8 py-8">
+              <div className="text-white text-center md:text-left flex-1 mt-4 sm:mt-20">
                 <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-2 bg-clip-text ">
                   Our Workshops
                 </h1>
@@ -396,22 +399,20 @@ export default function Home() {
                   succeed.
                 </div>
               </div>
-              <div className="w-full md:w-auto max-h-[60vh] md:max-h-[70vh] overflow-y-auto flex-1">
-                <Carousel orientation="vertical" opts={{ loop:true, align: "start", slidesToScroll: 1, containScroll: "trimSnaps" }} >
-                  <CarouselContent className="p-4 sm:p-6 md:p-8 gap-4">
+              <div className="w-full md:w-auto md:overflow-y-auto overflow-y-auto flex-1">
+                  <div className="p-4 sm:p-6 md:p-8 flex flex-col gap-6 md:gap-8">
                     {workshops.map((workshop) => (
-                      <CarouselItem
+                      <div
                         key={workshop.id}
-                        className="bg-white/70 basis-full backdrop-blur-lg border border-white/60 rounded-2xl shadow-2xl min-h-[15vh] flex items-center justify-center p-0 max-w-xl h-full"
+                        className="bg-white/70 backdrop-blur-lg border border-white/60 rounded-2xl shadow-2xl min-h-[15vh] flex items-center justify-center max-w-xl"
                       >
                         <div className="p-4 sm:p-6 w-full league-spartan text-gray-900 text-center">
                           <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">{workshop.name}</h3>
                           <p className="text-sm sm:text-base font-medium opacity-80">{workshop.description}</p>
                         </div>
-                      </CarouselItem>
+                      </div>
                     ))}
-                  </CarouselContent>
-                </Carousel>
+                  </div>
               </div>
             </div>
           </ParallaxLayer>
