@@ -332,11 +332,11 @@ export default function Home() {
               className="relative flex flex-col lg:flex-row items-center justify-center gap-6 md:gap-4 min-h-screen px-2 md:px-8 py-8 overflow-hidden"
 
             >
-              <div className="bg-white/80 rounded-2xl shadow-2xl p-4 sm:p-6 md:p-10 max-w-lg md:max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer min-w-[220px] min-h-[220px] md:min-h-[340px] w-full lg:w-[32vw] h-auto lg:h-[38vh] overflow-hidden">
-              <h2 className="text-3xl sm:text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent leading-tight mb-2 tracking-tight text-left">
+              <div className="bg-white/80 rounded-2xl shadow-2xl p-4 sm:p-6 md:p-10 max-w-lg md:max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer min-w-[220px] min-h-[200px] md:min-h-[280px] w-full lg:w-[32vw] h-auto overflow-auto">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent leading-tight mb-2 tracking-tight text-left">
                 WHO <span className="block">ARE WE?</span>
               </h2>
-              <div className="text-left text-sm sm:text-base md:text-md text-[#2a2040] font-medium whitespace-pre-line">
+              <div className="text-left text-xs sm:text-sm md:text-base text-[#2a2040] font-medium whitespace-pre-line">
                 We are a student-led team at our school, committed to
                 empowering the next generation to explore a wide range of
                 career opportunities while promoting equality and inclusion
@@ -346,11 +346,11 @@ export default function Home() {
                 limitations.
               </div>
               </div>
-              <div className="bg-white/80 rounded-2xl shadow-2xl p-4 sm:p-6 md:p-10 max-w-lg md:max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer min-w-[220px] min-h-[280px] md:min-h-[380px] w-full lg:w-[32vw] h-auto lg:h-[40vh] overflow-hidden">
-              <h2 className="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-2 tracking-tight text-left text-purple-400">
+              <div className="bg-white/80 rounded-2xl shadow-2xl p-4 sm:p-6 md:p-10 max-w-lg md:max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer min-w-[220px] min-h-[220px] md:min-h-[300px] w-full lg:w-[32vw] h-auto overflow-auto">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-2 tracking-tight text-left text-purple-400">
                 OUR <span className="block">VISION!</span>
               </h2>
-              <div className="text-left text-sm sm:text-base md:text-md text-[#2a2040] font-medium whitespace-pre-line">
+              <div className="text-left text-xs sm:text-sm md:text-base text-[#2a2040] font-medium whitespace-pre-line">
                 To create a future where every young person, regardless of
                 gender or background, feels empowered to pursue their dreams
                 and make an impact in the world. We believe that equal
@@ -358,11 +358,11 @@ export default function Home() {
                 tomorrow.
               </div>
               </div>
-              <div className="bg-white/80 rounded-2xl shadow-2xl p-4 sm:p-6 md:p-10 max-w-lg md:max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer min-w-[220px] min-h-[260px] md:min-h-[340px] w-full lg:w-[32vw] h-auto lg:h-[38vh] overflow-hidden">
-              <h2 className="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-2 tracking-tight text-left bg-gradient-to-r from-purple-400 to-blue-100 bg-clip-text text-transparent">
+              <div className="bg-white/80 rounded-2xl shadow-2xl p-4 sm:p-6 md:p-10 max-w-lg md:max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer min-w-[220px] min-h-[200px] md:min-h-[280px] w-full lg:w-[32vw] h-auto overflow-auto">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-2 tracking-tight text-left bg-gradient-to-r from-purple-400 to-blue-100 bg-clip-text text-transparent">
                 YOUR <span className="block">EXPERIENCE!</span>
               </h2>
-              <div className="text-left text-sm sm:text-base md:text-md text-[#2a2040] font-medium whitespace-pre-line">
+              <div className="text-left text-xs sm:text-sm md:text-base text-[#2a2040] font-medium whitespace-pre-line">
                 At this conference, you will take part in engaging workshops,
                 hear from inspiring panelists, and gain valuable insights into
                 a range of career paths. Our conference are designed to foster
