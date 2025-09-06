@@ -15,17 +15,19 @@ interface TeamMember {
 const presidents: TeamMember[] = [
     {
         id: 1,
-        name: "Saanvi Sahni",
-        role: "President",
-        image: "/team/Saanvi.jpg",
-        bio: "Saanvi is a passionate advocate for gender equality and leads our team with vision and empathy."
-    },
-    {
-        id: 2,
         name: "Hadiya Habib",
         role: "President",
         image: "/team/Hadiya1.jpg",
         bio: "Hadiya is a dedicated advocate for women's rights and works tirelessly to empower young girls."
+        
+    },
+    {
+        id: 2,
+        name: "Saanvi Sahni",
+        role: "President",
+        image: "/team/Saanvi.jpg",
+        bio: "Saanvi is a passionate advocate for gender equality and leads our team with vision and empathy."
+        
     },
 ]
 
@@ -166,19 +168,9 @@ const finance: TeamMember[] = [
     }
 ];
 
-const facultyLeader : TeamMember[] = [
-    {
-        id: 1,
-        name: "Nikhil Patel",
-        role: "Faculty Leader",
-        image: "/hi.jpg",
-        bio: "Alice is passionate about building scalable web applications and leading teams to success."
-    }
-]
-
 const memberCard = (member: TeamMember, idx: number) => {
     return (
-        <div className='border border-black py-8 text-black rounded-lg min-h-4xl'  key={idx}>
+        <div className='border border-black py-8 text-black rounded-lg min-h-4x bg-pink-200'  key={idx}>
             <Image width={300} height={464} className="overflow-auto py-8 object-contain" src={member.image} alt={member.name}/>
             <h3 className="text-lg text-center font-bold">{member.name}</h3>
             <p className="text-lg text-center">{member.role}</p>
@@ -200,7 +192,6 @@ const TeamPage = () => {
 
             <main className="pt-32 max-w-6xl mx-auto px-4">
                 {[
-                    { title: 'FACULTY LEADER', data: facultyLeader },
                     { title: 'PRESIDENTS', data: presidents },
                     { title: 'VICE PRESIDENT', data: vicePresidents},
                     { title: 'CONFERENCE MANAGEMENT', data: conferenceManagement},

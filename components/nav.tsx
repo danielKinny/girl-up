@@ -47,7 +47,7 @@ export default function Nav() {
           <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
         </button>
         <ul
-          className={`md:hidden absolute top-full left-0 w-full bg-black bg-opacity-95 text-white text-lg flex flex-col items-center space-y-6 py-8 transition-all duration-300 z-20 ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+          className={`md:hidden absolute top-full left-0 w-full bg-white bg-opacity-95 text-black text-lg flex flex-col items-center space-y-6 py-8 transition-all duration-300 z-20 ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
         >
           <li>
             <Link href="/" className="hover:text-pink-400" onClick={() => setMenuOpen(false)}>

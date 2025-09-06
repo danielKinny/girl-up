@@ -4,10 +4,6 @@ import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import type { IParallax } from "@react-spring/parallax";
 import SplitText from "../components/SplitText/SplitText";
 import Image from "next/image";
-import {Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "../components/ui/carousel"
 import {
   CalendarDaysIcon
 } from "@heroicons/react/24/outline";
@@ -296,7 +292,7 @@ export default function Home() {
             className="flex flex-col text-white league-spartan items-center justify-center gap-8 md:gap-16 px-4 md:px-0 mt-8 sm:mt-12 md:mt-20 min-h-[70vh]"
           >
             <div className="flex flex-col items-center w-full">
-              <div className="text-center w-full max-w-2xl md:max-w-4xl mt-4 sm:mt-8 mx-auto">
+              <div className="text-center w-full max-w-2xl md:max-w-7xl mt-4 sm:mt-8 mx-auto">
                 <h1 className="text-white text-center league-spartan font-extrabold text-3xl sm:text-4xl md:text-6xl">
                   GIRL UP - A UN INITIATIVE
                 </h1>
@@ -346,7 +342,7 @@ export default function Home() {
                 limitations.
               </div>
               </div>
-              <div className="bg-white/80 rounded-2xl shadow-2xl p-4 sm:p-6 md:p-10 max-w-lg md:max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer min-w-[180px] min-h-[120px] w-full lg:w-[32vw] h-auto overflow-auto">
+              <div className="bg-white/80 rounded-2xl shadow-2xl p-4 sm:p-6 md:p-10 max-w-lg md:max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer min-w-[180px] min-h-[120px] w-full lg:w-[32vw] overflow-auto">
               <h2 className="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-2 tracking-tight text-left text-purple-400">
                 OUR <span className="block">VISION!</span>
               </h2>
@@ -387,7 +383,7 @@ export default function Home() {
             }}
           >
             <div className="flex flex-col md:flex-row justify-center items-center h-full gap-6 md:gap-12 px-2 md:px-8 py-8">
-              <div className="text-white text-center md:text-left flex-1 mt-4 sm:mt-20">
+              <div className="text-white text-center md:text-left flex-1 mt-4 sm:mt-20 pl-[4vw]">
                 <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-2 bg-clip-text pl-[3vw]">
                   Our Workshops
                 </h1>
@@ -399,22 +395,20 @@ export default function Home() {
                   succeed.
                 </div>
               </div>
-              <div className="w-full md:w-auto max-h-[60vh] md:max-h-[70vh] overflow-y-auto flex-1">
-                <Carousel orientation="vertical" opts={{ loop:true, align: "start", slidesToScroll: 1, containScroll: "trimSnaps" }} >
-                  <CarouselContent className="p-4 sm:p-6 md:p-8 gap-4">
+              <div className="w-full md:w-auto max-h-[60vh] md:max-h-[70vh] flex-1">
+                  <div className="p-4 sm:p-6 md:p-8 flex-col flex gap-4 ">
                     {workshops.map((workshop) => (
-                      <CarouselItem
+                      <div
                         key={workshop.id}
-                        className="bg-white/70 basis-full backdrop-blur-lg border border-white/60 rounded-2xl shadow-2xl min-h-[15vh] flex items-center justify-center p-0 max-w-xl h-full"
+                        className="bg-white/70 backdrop-blur-lg border border-white/60 rounded-2xl shadow-2xl min-h-[15vh] flex items-center justify-center p-0 max-w-xl h-full"
                       >
                         <div className="p-4 sm:p-6 w-full league-spartan text-gray-900 text-center">
                           <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">{workshop.name}</h3>
                           <p className="text-sm sm:text-base font-medium opacity-80">{workshop.description}</p>
                         </div>
-                      </CarouselItem>
+                      </div>
                     ))}
-                  </CarouselContent>
-                </Carousel>
+                  </div>
               </div>
             </div>
           </ParallaxLayer>
