@@ -289,14 +289,14 @@ export default function Home() {
           <ParallaxLayer
             offset={1}
             speed={0.4}
-            className="flex flex-col text-white league-spartan items-center justify-center gap-8 md:gap-16 px-4 md:px-0 mt-8 sm:mt-12 md:mt-20 min-h-[70vh]"
+            className="flex flex-col text-white league-spartan items-center justify-center gap-8 md:gap-16 px-4 md:px-0 mt-8 sm:mt-12 md:mt-20 min-h-2xl"
           >
-            <div className="flex flex-col items-center w-full">
-              <div className="text-center w-full max-w-2xl md:max-w-7xl mt-4 sm:mt-8 mx-auto">
-                <h1 className="text-white text-center league-spartan font-extrabold text-3xl sm:text-4xl md:text-6xl">
+            <div className="flex flex-col items-center w-full h-7xl">
+              <div className="text-center w-full max-w-lg md:max-w-xl mt-4 sm:mt-8 mx-auto">
+                <h1 className="text-white text-center league-spartan font-extrabold text-base sm:text-2xl md:text-4xl">
                   GIRL UP - A UN INITIATIVE
                 </h1>
-                <p className="text-lg sm:text-xl md:text-3xl text-center p-2 sm:p-4 md:p-5">
+                <p className="text-xs sm:text-base md:text-lg text-center p-2 sm:p-4 md:p-5">
                   Girl Up, a United Nations initiative, empowers young women to become leaders and advocates for gender equality, education, and opportunity worldwide. Through leadership training and advocacy, it inspires students to take action on both local and global issues that affect girls and women. Our school is proud to launch its own Girl Up club, joining this international movement of changemakers. As part of our commitment, we aim to raise awareness, share ideas, and drive meaningful progress toward equality.
                 </p>
               </div>
@@ -330,7 +330,7 @@ export default function Home() {
             >
               <div className="bg-white/80 rounded-2xl shadow-2xl p-4 sm:p-6 md:p-10 max-w-lg md:max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer min-w-[180px] min-h-[120px] w-full lg:w-[32vw] h-auto overflow-auto">
               <h2 className="text-3xl sm:text-5xl md:text-7xl font-extrabold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent leading-tight mb-2 tracking-tight text-left">
-                WHO <span className="block">ARE WE?</span>
+                <span className="break-words text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">WHO <span className="block">ARE WE?</span></span>
               </h2>
               <div className="text-left text-sm sm:text-base md:text-md text-[#2a2040] font-medium whitespace-pre-line">
                 We are a student-led team at our school, committed to
@@ -344,7 +344,7 @@ export default function Home() {
               </div>
               <div className="bg-white/80 rounded-2xl shadow-2xl p-4 sm:p-6 md:p-10 max-w-lg md:max-w-2xl flex flex-col gap-4 border-2 border-[#b6b6e5] transition-all duration-300 hover:scale-102 hover:shadow-[0_8px_40px_0_rgba(80,0,120,0.15)] hover:bg-white/90 hover:backdrop-blur-md cursor-pointer min-w-[180px] min-h-[120px] w-full lg:w-[32vw] overflow-auto">
               <h2 className="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-2 tracking-tight text-left text-purple-400">
-                OUR <span className="block">VISION!</span>
+                <span className="break-words text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">OUR <span className="block">VISION!</span></span>
               </h2>
               <div className="text-left text-sm sm:text-base md:text-md text-[#2a2040] font-medium whitespace-pre-line">
                 To create a future where every young person, regardless of
@@ -358,7 +358,7 @@ export default function Home() {
               <h2 className="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-2 tracking-tight text-left bg-gradient-to-r from-purple-400 to-blue-100 bg-clip-text text-transparent">
                 YOUR <span className="block">EXPERIENCE!</span>
               </h2>
-              <div className="text-left text-sm sm:text-base md:text-md text-[#2a2040] font-medium whitespace-pre-line">
+              <div className="text-left text-sm sm:text-xs md:text-md text-[#2a2040] font-medium whitespace-pre-line">
                 At this conference, you will take part in engaging workshops,
                 hear from inspiring panelists, and gain valuable insights into
                 a range of career paths. Our conference are designed to foster
@@ -383,7 +383,7 @@ export default function Home() {
             }}
           >
             <div className="flex flex-col md:flex-row justify-center items-center h-full gap-6 md:gap-12 px-2 md:px-8 py-8">
-              <div className="text-white text-center md:text-left flex-1 mt-4 sm:mt-20 pl-[4vw]">
+              <div className="text-white text-center md:text-left flex-1 mt-4 pl-[4vw]">
                 <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-2 bg-clip-text pl-[3vw]">
                   Our Workshops
                 </h1>
@@ -395,12 +395,12 @@ export default function Home() {
                   succeed.
                 </div>
               </div>
-              <div className="w-full md:w-auto max-h-[60vh] md:max-h-[70vh] flex-1">
-                  <div className="p-4 sm:p-6 md:p-8 flex-col flex gap-4 ">
+              <div className="w-full md:w-auto flex-1">
+                  <div className="p-4 sm:p-6 md:p-8 flex-col flex gap-4 md:max-h-[70vh] overflow-y-auto">
                     {workshops.map((workshop) => (
                       <div
                         key={workshop.id}
-                        className="bg-white/70 backdrop-blur-lg border border-white/60 rounded-2xl shadow-2xl min-h-[15vh] flex items-center justify-center p-0 max-w-xl h-full"
+                        className="bg-white/70 backdrop-blur-lg border border-white/60 rounded-2xl shadow-2xl min-h-xl flex items-center justify-center p-0 max-w-xl h-full"
                       >
                         <div className="p-4 sm:p-6 w-full league-spartan text-gray-900 text-center">
                           <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2">{workshop.name}</h3>
