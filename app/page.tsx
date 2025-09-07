@@ -437,10 +437,10 @@ export default function Home() {
                   support our mission.
                 </p>
               </div>
-              <div className="text-white bg-[#fff56d] py-2 rounded-4xl league-spartan font-bold px-4 md:mr-[5vw]">
+              <div className="text-pink-400 bg-white py-2 rounded-4xl league-spartan font-bold px-4 md:mr-[5vw]">
                 <h1 className="text-xl sm:text-3xl md:text-[5vh] text-center mx-2 md:mx-4">
                   <CalendarDaysIcon className="inline-block h-8 sm:h-10 md:h-15 mr-2 mb-1 md:mb-3" />
-                  22nd November 2025
+                  <span className="text-pink-400"> 22nd November 2025 </span>
                 </h1>
               </div>
             </ParallaxLayer>
