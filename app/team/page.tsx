@@ -70,7 +70,7 @@ const outreach: TeamMember[] = [
         id: 2,
         name: "Daniel Kinny",
         role: "Co-head of Outreach",
-        image: "/team/daniel.png",
+        image: "/team/danny.png",
         bio: "Bob crafts beautiful and user-friendly interfaces with a focus on accessibility."
     },{
         id: 3,
