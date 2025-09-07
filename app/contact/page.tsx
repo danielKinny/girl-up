@@ -36,7 +36,7 @@ const contactPage = () => {
           transition={{ delay: 0.6, duration: 0.6 }}
         >
           <span className="text-md text-gray-800 mb-2">Email us at:</span>
-          <a href="mailto:examplefornow@gmail.com" className="text-lg font-medium text-[#c6005c] underline hover:text-pink-600">girlupcis@gmail.com</a>
+          <a href="mailto:equallcisd@gmail.com@gmail.com" className="text-lg font-medium text-[#c6005c] underline hover:text-pink-600">equallcisd@gmail.com</a>
         </motion.div>
         <motion.div
           className="w-full max-w-2xl h-80 rounded-lg overflow-hidden shadow-lg border border-gray-200"
