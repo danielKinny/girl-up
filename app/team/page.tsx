@@ -17,7 +17,7 @@ const presidents: TeamMember[] = [
         id: 1,
         name: "Hadiya Habib",
         role: "Co-President",
-        image: "/team/Hadiya1.png",
+        image: "/team/hadiya1.png",
         bio: "Hadiya is a dedicated advocate for women's rights and works tirelessly to empower young girls."
         
     },
@@ -25,7 +25,7 @@ const presidents: TeamMember[] = [
         id: 2,
         name: "Saanvi Sahni",
         role: "Co-President",
-        image: "/team/Saanvi.png",
+        image: "/team/saanvi.png",
         bio: "Saanvi is a passionate advocate for gender equality and leads our team with vision and empathy."
         
     },
@@ -36,7 +36,7 @@ const vicePresidents : TeamMember[] = [
         id: 1,
         name: "Siyona Haldar",
         role: "Vice President",
-        image: "/team/Siyona.png",
+        image: "/team/siyona.png",
         bio: "Siyona is a strong advocate for girls' education and empowerment."
     }
 ]
@@ -46,14 +46,14 @@ const conferenceManagement : TeamMember[] = [
         id: 1,
         name: "Sameeha Siddiqui",
         role: "Head of Conference Management",
-        image: "/team/Sameeha.png",
+        image: "/team/sameeha.png",
         bio: "Sameeha is an experienced event planner and ensures our conferences run smoothly."
     },
     {
         id: 2,
         name: "Ayesha Sadiq",
         role: "Co-head of Conference Management",
-        image: "/team/Ayesha.png",
+        image: "/team/ayesha.png",
         bio: "Ayesha is a skilled organizer and ensures our events are impactful and well-coordinated."
     }
 ]
@@ -70,13 +70,13 @@ const outreach: TeamMember[] = [
         id: 2,
         name: "Daniel Kinny",
         role: "Co-head of Outreach",
-        image: "/team/Danny.png",
+        image: "/team/daniel.png",
         bio: "Bob crafts beautiful and user-friendly interfaces with a focus on accessibility."
     },{
         id: 3,
         name: "Isha Karuppanchetty",
         role: "Deputy Head of Outreach",
-        image: "/team/Isha.png",
+        image: "/team/isha.png",
         bio: "Isha is dedicated to promoting our initiatives and engaging with the community."
     }
 ];
@@ -86,21 +86,21 @@ const mediaMarketing: TeamMember[] = [
         id: 1,
         name: "Melissa Mathias",
         role: "Co-head of Media and Marketing",
-        image: "/team/Melissa.png",
+        image: "/team/melissa.png",
         bio: "Melissa leads our media campaigns and ensures our message reaches the right audience."
     },
     {
         id: 2,
         name: "Nicole Fernando",
         role: "Co-head of Media and Marketing",
-        image: "/team/Nicole.png",
+        image: "/team/nicole.png",
         bio: "Ethan crafts engaging content for all our platforms."
     },
     {
         id: 3,
         name: "Anaaya Nair",
         role: "Deputy Head of Media and Marketing",
-        image: "/team/Anaaya.png",
+        image: "/team/anaaya.png",
         bio: "Anaaya is a creative marketer with a passion for storytelling."
     }
 ];
@@ -110,13 +110,13 @@ const admins: TeamMember[] = [
         id: 1,
         name: "Souparnika Praveen",
         role: "Co-head of Admins",
-        image: "/team/Souparnika.png",
+        image: "/team/souparnika.png",
         bio: "Souparnika manages our administrative tasks and ensures smooth operations."
     },{
         id: 2,
         name: "Fahim Suleiman",
         role: "Co-head of Admins",
-        image: "/team/Fahim.png",
+        image: "/team/fahim.png",
         bio: "Fahim oversees our admin team and ensures efficient operations."
     }
 ]
@@ -126,20 +126,20 @@ const logistics: TeamMember[] = [
         id: 1,
         name: "Suhasini Arun",
         role: "Co-head of Logistics",
-        image: "/team/Suhasini.png",
+        image: "/team/suhasini.png",
         bio: "George coordinates all event logistics and operations."
     },
     {
         id: 2,
         name: "Vrusheen Pillai",
         role: "Co-head of Logistics",
-        image: "/team/Vrusheen.png",
+        image: "/team/vrusheen.png",
         bio: "Vrusheen ensures every event runs smoothly from start to finish."
     },{
         id: 3,
         name: "Bianca Santiaguel",
         role: "Deputy Head of Logistics",
-        image: "/team/Bianca.png",
+        image: "/team/bianca.png",
         bio: "Bianca is responsible for managing logistics and ensuring smooth operations."
     }
 ];
@@ -149,21 +149,21 @@ const finance: TeamMember[] = [
         id: 1,
         name: "Samya Jain",
         role: "Co-head of Finance",
-        image: "/team/Samya.png",
+        image: "/team/samya.png",
         bio: "Ian oversees budgeting and financial planning."
     },
     {
         id: 2,
         name: "Minha Shanod",
         role: "Co-head of Finance",
-        image: "/team/Minha.png",
+        image: "/team/minha.png",
         bio: "Minha manages accounts and financial records."
     },
     {
         id: 3,
         name: "Jan Santiaguel",
         role: "Deputy Head of Finance",
-        image: "/team/Jan.png",
+        image: "/team/jan.png",
         bio: "Jan assists in managing financial operations and reporting."
     }
 ];
