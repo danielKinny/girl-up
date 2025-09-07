@@ -45,7 +45,7 @@ const conferenceManagement : TeamMember[] = [
     {
         id: 1,
         name: "Sameeha Siddiqui",
-        role: "Head of Conference Management",
+        role: "Co-Head of Conference Management",
         image: "/team/sameeha.png",
         bio: "Sameeha is an experienced event planner and ensures our conferences run smoothly."
     },
@@ -170,7 +170,8 @@ const finance: TeamMember[] = [
 
 const memberCard = (member: TeamMember, idx: number) => {
     return (
-        <div className='border border-black py-8 text-black rounded-lg min-h-4x bg-pink-200'  key={idx}>
+        <div className='border border-black py-8 text-white rounded-lg min-h-4x  bg-pink-700 px-4 transition-transform hover:scale-105 cursor-pointer'  key={idx}>
+            <Image width={50} height={50} className=" text-white mx-auto" src="/formallogo.png" alt="quote"/>
             <Image width={300} height={464} className="overflow-auto py-8 object-contain" src={member.image} alt={member.name}/>
             <h3 className="text-lg text-center font-bold">{member.name}</h3>
             <p className="text-lg text-center">{member.role}</p>
@@ -185,7 +186,7 @@ const sectionVariants = {
 
 const TeamPage = () => {
     return (
-        <div className="bg-gradient-to-br from-pink-50 to-pink-100 min-h-screen pb-16">
+        <div className="bg-gradient-to-br from-pink-50 to-pink-200 min-h-screen pb-16">
             <header className="absolute top-0 left-0 w-full z-50 text-white bg-pink-700 backdrop-filter backdrop-blur-md rounded-b-xl">
                 <Nav />
             </header>
