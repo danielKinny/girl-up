@@ -49,7 +49,7 @@ const workshops: workshop[] = [
   },
   {
     id: 3,
-    name: "Trash to Treasure: SustainHERability",
+    name: "Trash to Treasure: Sustainability",
     description:
       "Focusing on innovation, creativity, and teamwork, students receive a selection of recycled materials and are challenged to construct a practical item for everyday use—such as an organizer jar or plant holder. The activity may include a time constraint or a “mini shop” where teams can barter for additional supplies, encouraging resourcefulness and collaboration.",
   },

@@ -124,16 +124,16 @@ const admins: TeamMember[] = [
 const logistics: TeamMember[] = [
     {
         id: 1,
-        name: "Suhasini Arun",
+        name: "Vrusheen Pillai",
         role: "Co-head of Logistics",
-        image: "/team/suhasini.png",
+        image: "/team/vrusheen.png",
         bio: "George coordinates all event logistics and operations."
     },
     {
         id: 2,
-        name: "Vrusheen Pillai",
+        name: "Suhasini Arun",
         role: "Co-head of Logistics",
-        image: "/team/vrusheen.png",
+        image: "/team/suhasini.png",
         bio: "Vrusheen ensures every event runs smoothly from start to finish."
     },{
         id: 3,
